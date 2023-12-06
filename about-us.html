@@ -1,0 +1,1245 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <title>Fleet Manager</title>
+   <link rel="icon" type="image/x-icon" href="images/fleet_favicon.png">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+   <!-- <link rel="stylesheet" type="text/css"
+         href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+         />
+      <link rel="stylesheet" type="text/css"
+         href="http://kenwheeler.github.io/slick/slick/slick-theme.css" /> -->
+   <!-- <link
+         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/css/datepicker.min.css"
+         rel="stylesheet"> -->
+
+   <link href="font/stylesheet.css" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" /> -->
+   <!-- custom css -->
+   <link href="css/style.css" rel="stylesheet">
+   <style>
+      .footer-menu {
+         width: 100%;
+      }
+
+      .footer-link {
+         display: flex;
+         justify-content: center;
+      }
+
+      .about-hero-section-round-fleet {
+         width: 100%;
+         height: auto;
+         position: relative;
+         top: -234px;
+         right: -135px;
+      }
+
+      .about-hero-section-round-fleet img {
+         width: 55%;
+         height: auto;
+         float: right;
+      }
+
+      .about-hero-img img {
+         /* right: -35px; */
+      }
+
+      @media only screen and (max-width:1100px) {
+         .about-fleet-manager {
+            margin-top: -40px;
+         }
+      }
+
+      @media only screen and (max-width:992px) {
+         .about-hero-section-round-fleet {
+            width: 80%;
+            top: -180px;
+         }
+
+         .about-hero-section-round-fleet img {
+            width: 75%;
+         }
+
+         .about-hero-img img {
+            top: 144px;
+         }
+
+         .about-hero-section-round-fleet {
+            width: 100%;
+            display: flex;
+            justify-content: end;
+         }
+
+         .about-section .display-4 {
+            font-size: 3rem;
+         }
+
+         /* .about-fleet-manager{
+               margin-top: 40px;
+            } */
+      }
+
+      @media only screen and (max-width:767px) {
+         .about-hero-section-round img {
+            width: 66%;
+            left: -237px;
+         }
+
+         .about-hero-section-round-fleet {
+            justify-content: unset;
+         }
+
+         .about-hero-section-round-fleet {
+            top: -100px;
+            right: -173px;
+         }
+
+         .about-section .display-4 {
+            margin-top: 100px;
+            font-size: 3rem;
+         }
+
+         .about-hero-img img {
+            top: 150px;
+         }
+
+         .about-fleet-manager {
+            margin-top: 0px;
+         }
+
+         /* .about-fleet-manager{
+               margin-top: 40px;
+            } */
+      }
+
+      @media only screen and (max-width:575px) {
+         .about-hero-section-round img {
+            width: 66%;
+            left: -237px;
+         }
+
+         .about-section .display-4 {
+            margin-top: 90px;
+            margin-left: 20px;
+            font-size: 2.8rem;
+         }
+
+         .about-hero-section-round-fleet {
+            top: -26px;
+         }
+
+         /* .about-fleet-manager{
+               margin-top: 40px;
+            } */
+      }
+
+      /*    @media only screen and (min-width:360px) and (max-width:479px){
+           .about-hero-section-round img{
+               width: 66%;
+               left: -237px;
+            }
+            .about-hero-section-round-fleet{
+               top:-70px;
+            }
+         } */
+
+      @media only screen and (max-width:480px) {
+         .about-hero-section-round img {
+            width: 66% !important;
+            left: -173px !important;
+         }
+
+         .about-section .display-4 {
+            margin-left: 30px;
+            margin-top: 88px;
+            font-size: 1.6rem;
+         }
+
+         .about-hero-img img {
+            top: 100px;
+         }
+      }
+
+      @media only screen and (max-width:360px) {
+         .main-section-background {
+            background-size: 19% 400px;
+            height: 400px;
+         }
+
+         .about-hero-section-round-fleet {
+            top: 0px !important;
+         }
+
+         .about-hero-section-round img {
+            width: 66% !important;
+            left: -135px !important;
+         }
+
+         .about-section .display-4 {
+            margin-left: 13px;
+            margin-top: 67px;
+            font-size: 1.6rem;
+         }
+
+         .about-hero-img img {
+            top: 110px;
+            right: -25px;
+         }
+      }
+
+      .about-fleet-img {
+         width: 100%;
+         height: auto;
+         position: relative;
+      }
+
+      .about-fleet-img img {
+         width: 100%;
+         height: auto;
+         margin-top: 20px;
+      }
+
+      .about-fleet-img::before {
+         width: 20%;
+         height: 20%;
+         content: '';
+         position: relative;
+         left: -5px;
+         margin-top: -35px;
+         background-color: #30326B;
+         border-top-right-radius: 10px;
+      }
+
+      .responsive-client-section {
+         width: 100%;
+         height: auto;
+         position: relative;
+         margin-top: 100px;
+         margin-bottom: 80px;
+      }
+
+      .client-1-responsive {
+         width: 100%;
+         height: auto;
+         display: flex;
+         flex-direction: column;
+      }
+
+      .client-1-responsive-img {
+         width: 100%;
+         height: auto;
+         display: flex;
+         flex-direction: row;
+      }
+
+      .client-1-responsive-img1 {
+         width: 80%;
+         height: auto;
+         position: relative;
+         /* border-radius: 50%;
+   border: 1px solid #000; */
+      }
+
+      .client-1-responsive-img1:before {
+         width: 65%;
+         height: 89%;
+         content: '';
+         background-color: #130F41;
+         position: absolute;
+         top: -20px;
+         border-radius: 20px;
+      }
+
+      .client-1-responsive-img1 img {
+         width: 65%;
+         position: relative;
+         right: 0px;
+         display: flex;
+         margin: -3px 50px;
+         box-shadow: rgb(0 0 0 / 29%) 0px 19px 54px;
+         border-radius: 50%;
+         height: auto;
+
+      }
+
+      .responsive-mind-behind-title {
+         width: 100%;
+         margin-bottom: 65px;
+      }
+
+      .responsive-mind-behind-title h1 {
+         font-family: 'antipasto pro';
+         color: #130F40;
+         font-weight: 600;
+      }
+
+      .client-1-reponsive-name {
+         display: flex;
+         flex-direction: column;
+         width: 100%;
+         padding-top: 25px;
+      }
+
+      .client-1-reponsive-name h2 {
+         font-family: 'rubik';
+         font-weight: bold;
+      }
+
+      .client-1-reponsive-name .line-owner .line {
+         position: relative;
+
+      }
+
+      .client-1-responsive-img .client-1-reponsive-name .line-owner {
+         display: flex;
+         flex-direction: row;
+         /* justify-content: end; */
+         position: relative;
+      }
+
+      .client-1-responsive-img .client-1-reponsive-name .line-owner .line {
+         margin-right: 10px;
+         width: 40px;
+         height: 3px;
+         background-color: #130F40;
+         margin-top: 5px;
+      }
+
+      .client-1-responsive-img .client-1-reponsive-name .line-owner .line span {
+         top: -18px;
+         position: absolute;
+         /* right: 60px; */
+         font-size: 20px;
+         color: #C1CAD1;
+         font-weight: lighter;
+         display: flex;
+         justify-content: end;
+      }
+
+      .client-2-responsive-img {
+         width: 100%;
+         height: auto;
+         display: flex;
+         flex-direction: row;
+      }
+
+      .client-2-responsive-img .client-2-reponsive-name .line-owner2 {
+         display: flex;
+         flex-direction: row;
+         justify-content: end;
+         position: relative;
+      }
+
+      .client-2-responsive-img .client-2-reponsive-name .line-owner2 .line {
+         margin-right: 10px;
+         width: 40px;
+         height: 3px;
+         background-color: #130F40;
+         margin-top: 5px;
+      }
+
+      .client-2-responsive-img .client-2-reponsive-name .line-owner2 .line span {
+         /* top: 33px; */
+
+
+         position: absolute;
+         right: 60px;
+         font-size: 20px;
+         color: #C1CAD1;
+         font-weight: lighter;
+         display: flex;
+         justify-content: end;
+      }
+
+      .client-1-responsive-content {
+         width: 100%;
+         height: auto;
+         margin-top: 35px;
+      }
+
+      .client-1-responsive-content p {
+         font-size: 19px;
+         font-family: 'rubik';
+         color: #434252;
+         font-weight: lighter;
+         text-align: start;
+         line-height: 1.2;
+
+      }
+
+      .client-2-responsive {
+         width: 100%;
+         height: auto;
+         display: flex;
+         flex-direction: column;
+         margin-top: 50px;
+      }
+
+      .client-2-responsive-img {
+         width: 100%;
+         height: auto;
+         display: flex;
+         flex-direction: row;
+      }
+
+      .client-2-responsive-img1 {
+         width: 80%;
+         height: auto;
+         position: relative;
+         /* border-radius: 50%;
+   border: 1px solid #000; */
+      }
+
+      .client-2-responsive-img1:before {
+         width: 65%;
+         height: 89%;
+         content: '';
+         background-color: #130F41;
+         position: absolute;
+         top: -20px;
+         border-radius: 20px;
+         right: 0;
+      }
+
+      .client-2-responsive-img1 img {
+         width: 65%;
+         position: relative;
+         right: 0px;
+         display: flex;
+         margin: -3px 19px;
+         box-shadow: rgb(0 0 0 / 29%) 0px 19px 54px;
+         border-radius: 50%;
+         height: auto;
+
+      }
+
+      .client-2-reponsive-name {
+         display: flex;
+         flex-direction: column;
+         width: 100%;
+         padding-top: 25px;
+      }
+
+      .client-2-reponsive-name h2 {
+         font-family: 'rubik';
+         font-weight: bold;
+         display: flex;
+         justify-content: end;
+         padding-right: 10px;
+      }
+
+      .client-2-responsive-content {
+         width: 100%;
+         height: auto;
+         margin-top: 35px;
+      }
+
+      .client-2-responsive-content p {
+         font-size: 19px;
+         font-family: 'rubik';
+         color: #434252;
+         font-weight: lighter;
+         text-align: end;
+         line-height: 1.2;
+
+      }
+
+      @media only screen and (max-width:768px) {
+         .client-1-responsive-content p {
+            font-size: 16px;
+         }
+
+         .client-2-responsive-content p {
+            font-size: 16px;
+         }
+      }
+
+      @media only screen and (max-width:480px) {
+         .client-1-reponsive-name h2 {
+            font-size: 1.3rem;
+         }
+
+         .client-2-reponsive-name h2 {
+            font-size: 1.3rem;
+            padding-right: 0px;
+         }
+
+         .client-1-responsive-img1 img {
+            margin: -3px 40px;
+         }
+      }
+
+      .close.btn-check:focus+.close.btn,
+      .close.btn:focus {
+         border-color: #fff !important;
+      }
+
+      .close.btn-check:active+.btn,
+      .close.btn-check:checked+.btn,
+      .close.btn.active,
+      .close.btn.show,
+      .close.btn:active {
+         border-color: #fff !important;
+      }
+   </style>
+</head>
+
+<body>
+   <div class="main-section-background">
+      <div class="header">
+         <nav class="navbar  navbar-expand-lg navbar-wrapper">
+            <div class="container-fluid">
+               <div class="main-menubar about-us-menubar">
+                  <a class="navbar-brand" href="index.html"><img src="images/logo_dark.png" alt="logo"></a>
+                  <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                     data-bs-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false"
+                     aria-label="Toggle navigation">
+                     <span class="my-1 mx-2 close"><i class="fa fa-xmark"></i></span>
+                     <span class="custom-toggler navbar-toggler-icon "></span>
+                  </button>
+
+                  <div class="collapse navbar-collapse " id="navbarsExample09">
+                     <ul class="navbar-nav  me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                           <a class="nav-link " aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link" href="booking_history.html">Booking history</a>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link active" href="about-us.html">About us</a>
+                        </li>
+                        <li class="nav-item logout-btn-res d-lg-none">
+                           <!-- <a class="nav-link" href="#">About us</a> -->
+                           <button class="btn header-logout-btn d-md-flex d-lg-none"><a href="index2.html">Logout</a></button>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="dropdown text-end d-lg-none d-md-block d-sm-block">
+                  <a href="#" class="d-block link-dark-none text-decoration-none" id="dropdownUser1"
+                     aria-expanded="false" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                     <div class="img-back-shadow ">
+                        <img src="images/testimonial.png" alt="mdo" class="rounded-circle">
+                     </div>
+                  </a>
+               </div>
+               <div class="dropdown text-end ">
+                  <a href="#" class="d-block link-dark-none  text-decoration-none" data-bs-toggle="modal"
+                     data-bs-target="#profile-detail">
+                     <div class="img-back-shadow1">
+                        <img src="images/testimonial.png" alt="mdo" class="rounded-circle1">
+                     </div>
+                  </a>
+                  <div class="profile-detail-modal">
+                     <div class="modal fade" id="profile-detail" tabindex="-1" aria-labelledby="profile-detail"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-md">
+                           <div class="modal-content">
+                              <div class="modal-header ">
+                                 <div class="edit-profile">
+                                    <a href="#" data-bs-toggle="modal" data-bs-target="#edit_profile">Edit Profile</a>
+                                 </div>
+                                 <button type="button" class="close btn d-lg-none d-md-none d-sm-flex"
+                                    data-bs-dismiss="modal" aria-label="Close">
+                                    <span class="my-1 mx-2 close"><i class="fa fa-xmark"></i></span>
+                                    <!-- <span aria-hidden="true">&times;</span> -->
+                                 </button>
+                              </div>
+                              <div class="modal-body">
+                                 <!-- <div class="row">
+                                             <div class="col-12">
+                                                <div class="edit-profile">
+                                                   <a href="#"  data-bs-toggle="modal" data-bs-target="#edit_profile">Edit Profile</a>                                    
+                                                </div>
+                                             </div>
+                                          </div> -->
+                                 <div class="container">
+                                    <div class="row profile-sec">
+                                       <div class="col-lg-6 col-md-6 col-12 justify-content-sm-center">
+                                          <div class="profile-img">
+                                             <img src="images/l3.png" alt="">
+                                             <div class="profile-img-on-name ">
+                                                <p style="font-weight: bold;letter-spacing: .8px;">Kathriane Langford
+                                                </p>
+                                                <p style="font-weight: lighter;">Female</p>
+                                             </div>
+                                          </div>
+                                          <div class="profile-img-bottom-name ">
+                                             <p style="font-weight: bold;letter-spacing: .8px;">Kathriane Langford</p>
+                                             <p style="font-weight: lighter;">Female</p>
+                                          </div>
+                                       </div>
+                                       <div class="col-lg-6 col-md-6 col-12">
+                                          <div class="profile-phone-email">
+                                             <div class="row">
+                                                <div class="col-12 ">
+                                                   <div class="profile-phone">
+                                                      <p>Phone</p>
+                                                   </div>
+                                                </div>
+                                                <div class="col-12 ">
+                                                   <div class="profile-phone-nu">
+                                                      <p>+91 9153456788</p>
+                                                   </div>
+                                                </div>
+                                                <div class="col-12 ">
+                                                   <div class="profile-phone">
+                                                      <p>Email</p>
+                                                   </div>
+                                                </div>
+                                                <div class="col-12 ">
+                                                   <div class="profile-phone-nu">
+                                                      <p>enquiry@hyvikk.com</p>
+                                                   </div>
+                                                </div>
+                                                <div class="col-12">
+                                                   <div class="profile-logout">
+                                                      <a href="index2.html" class="btn">Logout</a>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="edit-profile-modal">
+                     <div class="modal fade" id="edit_profile" tabindex="-1" aria-labelledby="edit_profile"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-md">
+
+                           <div class="modal-content">
+                              <div class="modal-header d-lg-none d-md-none d-sm-flex d-flex"
+                                 style="padding: 0rem 1.5rem;">
+                                 <div class="edit-title  mt-0">
+                                    <h3>Edit Profile</h3>
+                                    <div class="line"></div>
+                                 </div>
+                                 <button type="button" class="close btn" data-bs-dismiss="modal" aria-label="close">
+                                    <span aria-hidden="true">×</span>
+                                 </button>
+                              </div>
+                              <!-- <div class="modal-header d-lg-none d-md-none d-sm-flex d-none">
+                                 <button type="button" class="close btn" data-bs-dismiss="modal" aria-label="Close">
+                                   <span aria-hidden="true">&times;</span>
+                                 </button>
+                               </div> -->
+                              <div class="modal-body">
+                                 <div class="container-fluid">
+                                    <div class="row">
+                                       <div
+                                          class="col-md-8 col-sm-12  pe-0 ps-0 order-last order-sm-last order-md-first oder-lg-first ">
+                                          <div class="edit-profile-popup">
+                                             <div class="container">
+                                                <div class="row">
+                                                   <div class="col-12 p-0">
+                                                      <div class="edit-profile-title ">
+                                                         <div class="edit-title d-none d-sm-none d-md-block d-xl-block">
+                                                            <h3>Edit Profile</h3>
+                                                            <div class="line"></div>
+                                                         </div>
+                                                         <div class="edit-profile-form">
+                                                            <div class="row">
+                                                               <div class="col-12">
+                                                                  <form class="row mt-4">
+                                                                     <div class="col-md-12  gender-btn-edit-profile">
+                                                                        <div class="row ">
+                                                                           <div class="col-4">
+                                                                              <label
+                                                                                 class="form-label gender-label">Gender</label>
+                                                                           </div>
+                                                                           <!-- <div class="col-4">
+                                                                           <button class="btn" href="#">Male</button>
+                                                                         </div>
+                                                                         <div class="col-4 .e-btn-group">
+                                                                            <button class="btn">Female</button> 
+                                                                           <input type="radio" id="radioleft" name="align" value="left" />
+                                                                           <label class="e-btn" for="radioleft">Left</label>
+                                                                         </div> -->
+                                                                           <div class="col-8 p-0">
+                                                                              <ul class="edit-gender-btn">
+                                                                                 <li>
+                                                                                    <input type="radio" id="a25"
+                                                                                       name="amount"
+                                                                                       style="cursor:pointer" />
+                                                                                    <label for="a25">Male</label>
+                                                                                 </li>
+                                                                                 <li>
+                                                                                    <input type="radio" id="a50"
+                                                                                       name="amount"
+                                                                                       style="cursor:pointer" />
+                                                                                    <label for="a50">Female</label>
+                                                                                 </li>
+                                                                              </ul>
+                                                                           </div>
+                                                                        </div>
+                                                                     </div>
+                                                                     <div class="col-12  input-effect edit-form">
+                                                                        <input class="effect-22 form-control"
+                                                                           type="text" placeholder="">
+                                                                        <label class="form-label"
+                                                                           style="position:absolute;">Name</label>
+                                                                        <span class="focus-bg"></span>
+                                                                     </div>
+                                                                     <div class="col-12  input-effect edit-form">
+                                                                        <input class="effect-22 form-control"
+                                                                           type="text" placeholder="">
+                                                                        <label class="form-label"
+                                                                           style="position:absolute;">Mobile</label>
+                                                                        <span class="focus-bg"></span>
+                                                                     </div>
+                                                                     <div class="col-12 input-effect edit-form">
+                                                                        <input class="effect-22 form-control"
+                                                                           type="email" placeholder="">
+                                                                        <label class="form-label"
+                                                                           style="position:absolute;">Email</label>
+                                                                        <span class="focus-bg"></span>
+                                                                     </div>
+                                                                     <div class="col-12 edit-profile-confirm-btn">
+                                                                        <a href="index.html"><button class="btn"
+                                                                              type="button">Confirm</button></a>
+                                                                     </div>
+                                                                  </form>
+                                                               </div>
+                                                            </div>
+                                                         </div>
+                                                      </div>
+                                                      <div class="col-12">
+                                                         <div
+                                                            class="reset-password-link mt-3 mb-4 mb-sm-4  mb-md-0 mb-lg-0 mb-xl-0">
+                                                            <a href="#" data-bs-toggle="modal"
+                                                               data-bs-target="#reset_password">Reset Password</a>
+                                                         </div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+
+                                       </div>
+                                       <div class="col-md-4 col-sm-12 ps-0 pe-0  order-sm-first order-lg-last">
+                                          <div class="edit-title d-lg-none d-md-none d-sm-none d-none ps-sm-5 ps-5">
+                                             <h3>Edit Profile</h3>
+                                             <div class="line"></div>
+                                          </div>
+                                          <div class="edit-profile-img">
+                                             <div class="profile-round-img">
+                                                <div class="p-r-img ">
+                                                   <img class="user-profile" src="images/l6.png">
+                                                   <div class="p-r-img-overlay">
+                                                      <a href="#" class="upload-button">Edit Profile</a>
+                                                      <input class="file-upload" type="file" accept="image/*">
+                                                   </div>
+                                                </div>
+                                                <!-- <div class="circle d-sm-flex d-md-none d-lg-none">
+                                                   <img class="profile-pic" src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg">
+                                            
+                                                 </div>
+                                                 <div class="p-image d-sm-flex d-md-none d-lg-none">
+                                                   <i class="fa fa-camera upload-button"></i> 
+                                                   <a href="#" class="upload-button">edit profile</a>
+                                                    <input class="file-upload" type="file" accept="image/*"/>
+                                                 </div> -->
+
+                                             </div>
+                                             <div class="profile-bottom-round-img">
+                                                <div class="round-profile">
+                                                   <img src="images/profile-round.png" alt="">
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="reset-password background-container">
+                     <div class="modal fade" id="reset_password" tabindex="-1" aria-labelledby="reset_password"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-md">
+                           <div class="modal-content">
+                              <div class="modal-header d-lg-none d-md-none d-sm-flex d-flex"
+                                 style="padding: 0rem 1.5rem;">
+                                 <div class="reset-title  mt-0">
+                                    <h3>Reset Password</h3>
+                                    <div class="line"></div>
+                                 </div>
+                                 <button type="button" class="close btn" data-bs-dismiss="modal" aria-label="close">
+                                    <span aria-hidden="true">×</span>
+                                 </button>
+                              </div>
+                              <div class="modal-body">
+                                 <div class="container">
+                                    <div class="row">
+                                       <div
+                                          class="col-md-8 col-sm-12 ps-0 pe-0 order-last order-sm-last order-md-first oder-lg-first">
+                                          <div class="resetpass-profile-popup">
+                                             <div class="container">
+                                                <div class="row">
+                                                   <div class="col-12">
+                                                      <div class="resetpass-profile-title">
+                                                         <div
+                                                            class="reset-title d-lg-block d-md-block d-sm-none d-none">
+                                                            <h3>Reset Password</h3>
+                                                            <div class="line"></div>
+                                                         </div>
+                                                         <div class="reset-pass-form">
+                                                            <div class="row">
+                                                               <div class="col-12">
+                                                                  <form class="row mt-4">
+                                                                     <div class="col-12  input-effect reset-form">
+                                                                        <input class="effect-22 form-control"
+                                                                           type="text" placeholder="">
+                                                                        <label class="form-label"
+                                                                           style="position:absolute;">Enter current
+                                                                           password</label>
+                                                                        <span class="focus-bg"></span>
+                                                                     </div>
+                                                                     <div class="col-12">
+                                                                        <div class="enter-pass-line">
+
+                                                                        </div>
+                                                                     </div>
+                                                                     <div class="col-12  input-effect reset-form"
+                                                                        style="margin-top:10px">
+                                                                        <input class="effect-22 form-control"
+                                                                           type="text" placeholder="">
+                                                                        <label class="form-label"
+                                                                           style="position:absolute;">Enter new
+                                                                           password</label>
+                                                                        <span class="focus-bg"></span>
+                                                                     </div>
+
+                                                                     <div class="col-12 input-effect reset-form">
+                                                                        <input class="effect-22 form-control"
+                                                                           type="email" placeholder="">
+                                                                        <label class="form-label"
+                                                                           style="position:absolute;">Confirm new
+                                                                           password </label>
+                                                                        <span class="focus-bg"></span>
+
+                                                                     </div>
+                                                                     <div class="col-12 reset-update-pass-btn">
+                                                                        <a href="index.html" class="btn">Update
+                                                                           password</a>
+                                                                     </div>
+                                                                  </form>
+                                                               </div>
+                                                            </div>
+                                                         </div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <div class="col-md-4 col-sm-12 ps-0 pe-0 order-sm-first order-lg-last">
+                                          <!-- <div class="reset-title d-lg-none d-md-none d-sm-block d-block ps-sm-5 ps-5">
+                                           <h3>Reset Password</h3>
+                                           <div class="line"></div>
+                                        </div>  -->
+                                          <div class="reset-pass-img" style="">
+                                             <div class="reset-round-img">
+                                                <div class="r-r-img">
+                                                   <img src="images/l6.png">
+                                                </div>
+                                             </div>
+                                             <div class="profile-bottom-round-img">
+                                                <div class="round-profile">
+                                                   <img src="images/profile-round.png" alt="">
+                                                </div>
+                                             </div>
+                                          </div>
+
+
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </nav>
+
+      </div>
+      <div class="about-hero-section background-container" style="overflow-x:hidden">
+         <div class="row me-0">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-6">
+               <div class="about-hero-section-round">
+                  <img src="images/round2.png" class="img-fluid" alt="round">
+               </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+               <div class="about-hero-section-round-fleet">
+                  <img src="images/FLEET1.png" class="img-fluid" alt="fleet">
+               </div>
+            </div>
+         </div>
+         <div class="about-hero-section-content">
+            <div class="container">
+               <div class="row d-flex">
+                  <div class="col-12 col-md-12 col-lg-6 order-md-first">
+                     <div class="about-section">
+                        <h1 class="display-4">About <br>Fleet Manager</h1>
+                     </div>
+                  </div>
+                  <div class="col-12 col-md-12 col-lg-6 order-md-last">
+                     <div class="about-hero-img">
+                        <img src="images/about-hero-img.png" alt="about-hero-img">
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <section class="about-fleet-manager ">
+      <div class="container-fluid px-0">
+         <div class="row me-0 ms-0">
+            <div class="col-4 col-md-5 col-lg-4 mt-5">
+               <div class="about-fleet-manager-image">
+                  <img src="images/mask.png" class="image-fluid" alt="mask"
+                     style="box-shadow: rgba(0 0 0 / 25%) 0px 11px 41px 3px, rgb(0 0 0 / 10%) 0px 0px 0px 1px;">
+               </div>
+            </div>
+            <div class="col-8 col-md-7 col-lg-7">
+               <div class="about-fleet-manager-content mt-5">
+                  <h2>Fleet manager</h2>
+                  <div class="line"></div>
+                  <p class="d-md-flex d-none">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla
+                     consequatur aliquid ipsa, adipisci ad vitae eligendi officiis et repellat id enim possimus, eveniet
+                     dolore omnis quas a impedit. Nulla, deleniti?Lorem ipsum dolor sit amet consectetur adipisicing
+                     elit. Adipisci inventore consequatur nemo officiis aliquid fugiat tempora at eum doloribus. Quia
+                     dolore culpa possimus dolor. Esse mollitia nesciunt aut repellendus. Odio! Nulla, deleniti?Lorem
+                     ipsum dolor sit amet consectetur adipisicing elit. Adipisci inventore consequatur nemo officiis
+                     aliquid fugiat </p>
+                  <p class="d-flex d-md-none">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla
+                     consequatur aliquid ipsa, adipisci ad vitae eligendi officiis et repellat id enim possimus, eveniet
+                     dolore omnis quas a impedit. Nulla, deleniti?Lorem ipsum dolor sit amet</p>
+               </div>
+            </div>
+
+         </div>
+      </div>
+   </section>
+   <!-- <section class="about">
+   <div class="row">
+      <div class="col-12">
+         <div class="about-fleet">
+            <div class="row">
+               <div class="col-6">
+                  <div class="about-fleet-img">
+                     <img src="images/Mask.png"  style="box-shadow: rgba(0 0 0 / 25%) 0px 11px 41px 3px, rgb(0 0 0 / 10%) 0px 0px 0px 1px;">
+
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+
+</section> -->
+   <section class="servey">
+      <div class="container">
+         <div class="row " style="display: flex;justify-content: space-evenly;">
+            <div class="col-md-5">
+               <div class="city-servey">
+                  <div class="city-servey-img">
+                     <img src="images/Mask_Group_7.png" alt="mask">
+                  </div>
+                  <div class="count-servey">
+                     <h3>110 +</h3>
+                  </div>
+                  <div class="city-servey-content">
+                     <h2>Cities serviced by the fleet to get you to your destination on time,everything</h2>
+                  </div>
+               </div>
+            </div>
+            <div class="col-md-5 mt-4 mt-sm-4 mt-md-0 mt-lg-0 mt-xl-0">
+               <div class="vehicle-servey">
+                  <div class="vehicle-servey-img">
+                     <img src="images/Mask_Group_9.png" alt="">
+                  </div>
+                  <div class="vehicle-count-servey">
+                     <h3>900,000</h3>
+                  </div>
+                  <div class="vehicle-servey-content">
+                     <h2>Vehicles serving millions of customer everyday </h2>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <section class="minds d-lg-flex  d-md-none">
+      <div class="minds-behind-fleet-manager px-5">
+         <div class="container">
+            <div class="row">
+               <div class="col-12">
+                  <div class="minds-behind-title">
+                     <h1>Minds Behind Fleet Manager</h1>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-md-5">
+                  <div class="client-1">
+                     <div class="client-1-img">
+                        <img src="images/client1.png" alt="">
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-6">
+                  <div class="client-1-content">
+                     <div>
+                        <h2>Katharine Langford</h2>
+                     </div>
+                     <div class="line-owner">
+                        <div class="line"><span>owner</span></div>
+                     </div>
+                     <div class="client-1-description">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero adipisci saepe tempore amet
+                           officiis, nemo non et, quos eveniet ipsa ducimus consequatur natus! Nostrum id aliquam facere
+                           cumque illum rerum! quos eveniet ipsa ducimus consequatur natus! Nostrum id aliquam facere
+                           cumque illum rerum!</p>
+                     </div>
+
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-md-7">
+                  <div class="client-2-content">
+                     <div class="d-flex justify-content-end">
+                        <h2>Selena Gomez</h2>
+                     </div>
+                     <div class="line-owner2">
+                        <div class="line"><span>owner</span></div>
+                     </div>
+                     <div class="client-2-description">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero adipisci saepe tempore amet
+                           officiis, nemo non et, quos eveniet ipsa ducimus consequatur natus! Nostrum id aliquam facere
+                           cumque illum rerum! quos eveniet ipsa ducimus consequatur natus! Nostrum id aliquam facere
+                           cumque illum rerum!</p>
+                     </div>
+
+                  </div>
+               </div>
+               <div class="col-md-5">
+                  <div class="client-2">
+                     <div class="client-2-img">
+                        <img src="images/client2.png" alt="">
+                     </div>
+                  </div>
+               </div>
+
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <section class="responsive-client-section d-lg-none d-md-flex">
+      <div class="container">
+         <div class="row">
+            <div class="col-12">
+               <div class="responsive-mind-behind-title">
+                  <h1>Minds behind Fleet Manager</h1>
+               </div>
+            </div>
+            <div class="col-12">
+               <div class="client-1-responsive">
+                  <div class="row">
+                     <div class="col-12">
+                        <div class="client-1-responsive-img">
+                           <div class="client-1-responsive-img1">
+                              <img src="images/client1.png" alt="">
+                           </div>
+                           <div class="client-1-reponsive-name">
+                              <h2>Katharine Langford</h2>
+                              <div class="line-owner">
+                                 <div class="line"><span>owner</span></div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-12">
+                        <div class="client-1-responsive-content">
+                           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero adipisci saepe tempore
+                              amet officiis, nemo non et, quos eveniet ipsa ducimus consequatur natus! Nostrum id
+                              aliquam facere cumque illum rerum! quos eveniet ipsa ducimus consequatur natus! Nostrum id
+                              aliquam facere cumque illum rerum!</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-12">
+               <div class="client-2-responsive">
+                  <div class="row">
+                     <div class="col-12">
+                        <div class="client-2-responsive-img">
+                           <div class="client-2-reponsive-name">
+                              <h2>Katharine Langford</h2>
+                              <div class="line-owner2">
+                                 <div class="line"><span>owner</span></div>
+                              </div>
+                           </div>
+                           <div class="client-2-responsive-img1">
+                              <img src="images/client2.png" alt="">
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-12">
+                        <div class="client-2-responsive-content">
+                           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero adipisci saepe tempore
+                              amet officiis, nemo non et, quos eveniet ipsa ducimus consequatur natus! Nostrum id
+                              aliquam facere cumque illum rerum! quos eveniet ipsa ducimus consequatur natus! Nostrum id
+                              aliquam facere cumque illum rerum!</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <footer>
+      <div class="container">
+         <div class="row">
+            <div class="col-md-12">
+               <div class="footer_logo">
+                  <img src="images/footer_logo_back.png">
+                  <div class="footer_logo_img" style="position: absolute; ">
+                     <img src="images/footer_logo.png">
+                  </div>
+               </div>
+            </div>
+            <div class="col-md-12">
+               <div class="footer-menu">
+                  <!-- <div class="row ">
+                  <div class="col-3">
+                     <div class="footer-link">
+                        <a href="contact.html">Contact</a>
+                     </div>
+                  </div>
+                  <div class="col-3">
+                     <div class="footer-link">
+                        <a href="booking_history.html">Booking history</a>
+                     </div>
+                  </div>
+                  <div class="col-3">
+                     <div class="footer-link">
+                        <a href="about-us.html">About us</a>
+                     </div>
+                  </div>
+               </div> -->
+                  <ul>
+                     <li><a href="contact.html" title="Contact">Contact</a></li>
+                     <li><a href="booking_history.html" title="Booking history">Booking history</a></li>
+                     <li><a href="about-us.html" title="About us">About us</a></li>
+                     <!-- <li><a href="#" title="letter-spacing">letter-spacing</a></li>
+                  <li><a href="#" title="line-height">line-height</a></li> -->
+                  </ul>
+                  <!-- <ul>
+                  <li><a href="contact.html" title="Contact">Contact</a></li>
+                  <li><a href="booking_history.html" tite="Booking history">Booking history</a></li>
+                  <li><a href="about-us.html" title="About us">About us</a></li>
+               </ul> -->
+               </div>
+            </div>
+            <div class="col-md-12">
+               <div class="social-icon">
+                  <div class="social-icon-background">
+                     <div class="facebook">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                     </div>
+                  </div>
+                  <div class="social-icon-background">
+                     <div class="twitter">
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                     </div>
+                  </div>
+                  <div class="social-icon-background">
+                     <div class="instagram">
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                     </div>
+                  </div>
+                  <div class="social-icon-background">
+                     <div class="google-plus">
+                        <a href="#"><i class="fa-brands fa-google-plus-g"></i></a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-md-12">
+               <div class="copyright">
+                  <p>&#169; Hyvikk Solutions 2019.All Rights Reserved.</p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </footer>
+   <!--Add Scripts-->
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"></script>
+
+   <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+   <!-- <script type="text/javascript"
+         src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script> -->
+   <!-- <script type="text/javascript"
+         src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+      <script
+         src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/js/bootstrap-datepicker.min.js"></script> -->
+   <script>
+      $(document).ready(function () {
+         $(".book-now").click(function () {
+            $(".date-time").css("display", "none", " transition", "all .3s ease");
+         });
+         $(".book-later").click(function () {
+            $(".date-time").css("display", "block");
+         });
+         var readURL = function (input) {
+            if (input.files && input.files[0]) {
+               var reader = new FileReader();
+
+               reader.onload = function (e) {
+                  $('.profile-pic').attr('src', e.target.result);
+               }
+
+               reader.readAsDataURL(input.files[0]);
+            }
+         }
+         $(".file-upload").on('change', function () {
+            readURL(this);
+         });
+         $(".upload-button").on('click', function () {
+            $(".file-upload").click();
+         });
+      });
+   </script>
+</body>
+
+</html>

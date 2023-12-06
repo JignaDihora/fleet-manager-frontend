@@ -1,0 +1,1118 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Fleet Manager</title>
+  <link rel="icon" type="image/x-icon" href="images/fleet_favicon.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+  <link rel="stylesheet" type="text/css" href="http://kenwheeler.github.io/slick/slick/slick-theme.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/css/datepicker.min.css"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.css">
+  <link href="font/stylesheet.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <!-- custom css -->
+  <link href="css/style.css" rel="stylesheet">
+  <style>
+    .footer-menu {
+      width: 100%;
+    }
+
+    .footer-link {
+      display: flex;
+      justify-content: center;
+    }
+
+    .close.btn-check:focus+.close.btn,
+    .close.btn:focus {
+      border-color: #fff !important;
+    }
+
+    .close.btn-check:active+.btn,
+    .close.btn-check:checked+.btn,
+    .close.btn.active,
+    .close.btn.show,
+    .close.btn:active {
+      border-color: #fff !important;
+    }
+  </style>
+</head>
+
+<body>
+  <!--header section start-->
+  <div class="header" style="position:relative">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <div class="main-menubar">
+          <a class="navbar-brand" href="index.html"><img src="images/logo_dark.png"></a>
+          <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="my-1 mx-2 close"><i class="fa fa-xmark"></i></span>
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarsExample09">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="booking_history.html">Booking history</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about-us.html">About us</a>
+              </li>
+              <li class="nav-item logout-btn-res d-lg-none">
+                <!-- <a class="nav-link" href="#">About us</a> -->
+                <button class="btn header-logout-btn d-md-flex d-lg-none"><a href="index2.html">Logout</a></button>
+              </li>
+              <!-- <li class="nav-item d-none profile">
+                          <a href="#" class="nav-link">Profile</a>
+                       </li> -->
+            </ul>
+          </div>
+        </div>
+        <div class="dropdown text-end">
+          <a href="#" class="d-block link-dark-none text-decoration-none" data-bs-toggle="modal"
+            data-bs-target="#profile-detail">
+            <div class="img-back-shadow">
+              <img src="images/testimonial.png" alt="mdo" class="rounded-circle">
+            </div>
+          </a>
+
+        </div>
+        <div class="profile-detail-modal">
+          <div class="modal fade" id="profile-detail" tabindex="-1" aria-labelledby="profile-detail" aria-hidden="true">
+            <div class="modal-dialog modal-md">
+              <div class="modal-content">
+                <div class="modal-header ">
+                  <div class="edit-profile">
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#edit_profile">Edit Profile</a>
+                  </div>
+                  <button type="button" class="close btn d-lg-none d-md-none d-sm-flex" data-bs-dismiss="modal"
+                    aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <!-- <div class="row">
+                                      <div class="col-12">
+                                         <div class="edit-profile">
+                                            <a href="#"  data-bs-toggle="modal" data-bs-target="#edit_profile">Edit Profile</a>                                    
+                                         </div>
+                                      </div>
+                                   </div> -->
+                  <div class="container">
+                    <div class="row profile-sec">
+                      <div class="col-lg-6 col-md-6 col-12 justify-content-sm-center">
+                        <div class="profile-img">
+                          <img src="images/l3.png" alt="">
+                          <div class="profile-img-on-name ">
+                            <p style="font-weight: bold;letter-spacing: .8px;">Kathriane Langford</p>
+                            <p style="font-weight: lighter;">Female</p>
+                          </div>
+                        </div>
+                        <div class="profile-img-bottom-name ">
+                          <p style="font-weight: bold;letter-spacing: .8px;">Kathriane Langford</p>
+                          <p style="font-weight: lighter;">Female</p>
+                        </div>
+                      </div>
+                      <div class="col-lg-6 col-md-6 col-12">
+                        <div class="profile-phone-email">
+                          <div class="row">
+                            <div class="col-12 ">
+                              <div class="profile-phone">
+                                <p>Phone</p>
+                              </div>
+                            </div>
+                            <div class="col-12 ">
+                              <div class="profile-phone-nu">
+                                <p>+91 9153456788</p>
+                              </div>
+                            </div>
+                            <div class="col-12 ">
+                              <div class="profile-phone">
+                                <p>Email</p>
+                              </div>
+                            </div>
+                            <div class="col-12 ">
+                              <div class="profile-phone-nu">
+                                <p>enquiry@hyvikk.com</p>
+                              </div>
+                            </div>
+                            <div class="col-12">
+                              <div class="profile-logout">
+                                <a href="index2.html" class="btn">Logout</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="edit-profile-modal">
+          <div class="modal fade" id="edit_profile" tabindex="-1" aria-labelledby="edit_profile" aria-hidden="true">
+            <div class="modal-dialog modal-md">
+
+              <div class="modal-content">
+                <div class="modal-header d-lg-none d-md-none d-sm-flex d-flex" style="padding: 0rem 1.5rem;">
+                  <div class="edit-title  mt-0">
+                    <h3>Edit Profile</h3>
+                    <div class="line"></div>
+                  </div>
+                  <button type="button" class="close btn" data-bs-dismiss="modal" aria-label="close">
+                    <span aria-hidden="true">×</span>
+                  </button>
+                </div>
+                <!-- <div class="modal-header d-lg-none d-md-none d-sm-flex d-none">
+                          <button type="button" class="close btn" data-bs-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div> -->
+                <div class="modal-body">
+                  <div class="container-fluid">
+                    <div class="row">
+                      <div class="col-md-8 col-sm-12 ps-0 pe-0 order-last order-sm-last order-md-first oder-lg-first ">
+                        <div class="edit-profile-popup">
+                          <div class="container">
+                            <div class="row">
+                              <div class="col-12 p-0">
+                                <div class="edit-profile-title ">
+                                  <div class="edit-title d-none d-sm-none d-md-block d-xl-block">
+                                    <h3>Edit Profile</h3>
+                                    <div class="line"></div>
+                                  </div>
+                                  <div class="edit-profile-form">
+                                    <div class="row">
+                                      <div class="col-12">
+                                        <form class="row mt-4">
+                                          <div class="col-md-12  gender-btn-edit-profile">
+                                            <div class="row ">
+                                              <div class="col-4">
+                                                <label class="form-label gender-label">Gender</label>
+                                              </div>
+                                              <!-- <div class="col-4">
+                                                                    <button class="btn" href="#">Male</button>
+                                                                  </div>
+                                                                  <div class="col-4 .e-btn-group">
+                                                                     <button class="btn">Female</button> 
+                                                                    <input type="radio" id="radioleft" name="align" value="left" />
+                                                                    <label class="e-btn" for="radioleft">Left</label>
+                                                                  </div> -->
+                                              <div class="col-8 p-0">
+                                                <ul class="edit-gender-btn">
+                                                  <li>
+                                                    <input type="radio" id="a25" name="amount" style="cursor:pointer" />
+                                                    <label for="a25">Male</label>
+                                                  </li>
+                                                  <li>
+                                                    <input type="radio" id="a50" name="amount" style="cursor:pointer" />
+                                                    <label for="a50">Female</label>
+                                                  </li>
+                                                </ul>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="col-12  input-effect edit-form">
+                                            <input class="effect-22 form-control" type="text" placeholder="">
+                                            <label class="form-label" style="position:absolute;">Name</label>
+                                            <span class="focus-bg"></span>
+                                          </div>
+                                          <div class="col-12  input-effect edit-form">
+                                            <input class="effect-22 form-control" type="text" placeholder="">
+                                            <label class="form-label" style="position:absolute;">Mobile</label>
+                                            <span class="focus-bg"></span>
+                                          </div>
+                                          <div class="col-12 input-effect edit-form">
+                                            <input class="effect-22 form-control" type="email" placeholder="">
+                                            <label class="form-label" style="position:absolute;">Email</label>
+                                            <span class="focus-bg"></span>
+                                          </div>
+                                          <div class="col-12 edit-profile-confirm-btn">
+                                            <a href="index.html"><button class="btn" type="button">Confirm</button></a>
+                                          </div>
+                                        </form>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-12">
+                                  <div class="reset-password-link mt-3 mb-4 mb-sm-4  mb-md-0 mb-lg-0 mb-xl-0">
+                                    <a href="#" data-bs-toggle="modal" data-bs-target="#reset_password">Reset
+                                      Password</a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+                      <div class="col-md-4 col-sm-12 ps-0 pe-0  order-sm-first order-lg-last">
+                        <div class="edit-title d-lg-none d-md-none d-sm-none d-none ps-sm-5 ps-5">
+                          <h3>Edit Profile</h3>
+                          <div class="line"></div>
+                        </div>
+                        <div class="edit-profile-img">
+                          <div class="profile-round-img">
+                            <div class="p-r-img ">
+                              <img class="user-profile" src="images/l6.png">
+                              <div class="p-r-img-overlay">
+                                <a href="#" class="upload-button">Edit Profile</a>
+                                <input class="file-upload" type="file" accept="image/*">
+                              </div>
+                            </div>
+                            <!-- <div class="circle d-sm-flex d-md-none d-lg-none">
+                                            <img class="profile-pic" src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg">
+                                     
+                                          </div>
+                                          <div class="p-image d-sm-flex d-md-none d-lg-none">
+                                            <i class="fa fa-camera upload-button"></i> 
+                                            <a href="#" class="upload-button">edit profile</a>
+                                             <input class="file-upload" type="file" accept="image/*"/>
+                                          </div> -->
+
+                          </div>
+                          <div class="profile-bottom-round-img">
+                            <div class="round-profile">
+                              <img src="images/profile-round.png" alt="">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="reset-password background-container">
+          <div class="modal fade" id="reset_password" tabindex="-1" aria-labelledby="reset_password" aria-hidden="true">
+            <div class="modal-dialog modal-md">
+              <div class="modal-content">
+                <div class="modal-header d-lg-none d-md-none d-sm-flex d-flex" style="padding: 0rem 1.5rem;">
+                  <div class="reset-title  mt-0">
+                    <h3>Reset Password</h3>
+                    <div class="line"></div>
+                  </div>
+                  <button type="button" class="close btn" data-bs-dismiss="modal" aria-label="close">
+                    <span aria-hidden="true">×</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-md-8 col-sm-12 ps-0 pe-0 order-last order-sm-last order-md-first oder-lg-first">
+                        <div class="resetpass-profile-popup">
+                          <div class="container">
+                            <div class="row">
+                              <div class="col-12">
+                                <div class="resetpass-profile-title">
+                                  <div class="reset-title d-lg-block d-md-block d-sm-none d-none">
+                                    <h3>Reset Password</h3>
+                                    <div class="line"></div>
+                                  </div>
+                                  <div class="reset-pass-form">
+                                    <div class="row">
+                                      <div class="col-12">
+                                        <form class="row mt-4">
+                                          <div class="col-12  input-effect reset-form">
+                                            <input class="effect-22 form-control" type="text" placeholder="">
+                                            <label class="form-label" style="position:absolute;">Enter current
+                                              password</label>
+                                            <span class="focus-bg"></span>
+                                          </div>
+                                          <div class="col-12">
+                                            <div class="enter-pass-line">
+
+                                            </div>
+                                          </div>
+                                          <div class="col-12  input-effect reset-form" style="margin-top:10px">
+                                            <input class="effect-22 form-control" type="text" placeholder="">
+                                            <label class="form-label" style="position:absolute;">Enter new
+                                              password</label>
+                                            <span class="focus-bg"></span>
+                                          </div>
+
+                                          <div class="col-12 input-effect reset-form">
+                                            <input class="effect-22 form-control" type="email" placeholder="">
+                                            <label class="form-label" style="position:absolute;">Confirm new password
+                                            </label>
+                                            <span class="focus-bg"></span>
+
+                                          </div>
+                                          <div class="col-12 reset-update-pass-btn">
+                                            <a href="index.html" class="btn">Update password</a>
+                                          </div>
+                                        </form>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-4 col-sm-12 ps-0 pe-0 order-sm-first order-lg-last">
+                        <!-- <div class="reset-title d-lg-none d-md-none d-sm-block d-block ps-sm-5 ps-5">
+                                 <h3>Reset Password</h3>
+                                 <div class="line"></div>
+                              </div>  -->
+                        <div class="reset-pass-img" style="">
+                          <div class="reset-round-img">
+                            <div class="r-r-img">
+                              <img src="images/l6.png">
+                            </div>
+                          </div>
+                          <div class="profile-bottom-round-img">
+                            <div class="round-profile">
+                              <img src="images/profile-round.png" alt="">
+                            </div>
+                          </div>
+                        </div>
+
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+  </div>
+
+  <section class="booking-history-title background-container">
+    <div class="booking-history-round">
+      <img src="images/booking-history.png" alt="round">
+    </div>
+    <div class="container">
+      <div class="col-12">
+        <div class="history-title">
+          <h2>
+            Booking History
+          </h2>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="background-container">
+    <div class="booking-history-details">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 ">
+            <div class="booking-history-bg ">
+              <div class="booking-history-bg-blue-img"></div>
+              <div class="from-to-address">
+                <div class="row">
+                  <div class="col-8">
+                    <div class="address-detail">
+                      <div class="row">
+                        <div class="col-12 col-md-6 col-lg-6">
+                          <div class="from-add">
+                            <h5 class="from">From</h5>
+                            <p class="mb-3 mb-sm-3 mb-md-3 mb-lg-0 mb-xl-0 mb-xxl-0">
+                              309, Swara Parklane,<br>Atabhai Chowk, Bhavnagar
+                            </p>
+                          </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-6">
+                          <div class="from-add">
+                            <h5 class="from">To</h5>
+                            <p class="mb-3 mb-sm-3 mb-md-3 mb-lg-0 mb-xl-0 mb-xxl-0">
+                              309, Swara Parklane,<br>Atabhai Chowk, Bhavnagar
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-4">
+                    <div class="rent-hour">
+                      <div class="row g-0">
+                        <div class="col-12 col-md-12 col-lg-6">
+                          <div class="rent">
+                            <h5>$500</h5>
+                          </div>
+                        </div>
+                        <div class="col-12 col-md-12 col-lg-6">
+                          <div class="hour">
+                            <p class="km">5000 km</p>
+                            <p class="hour-detail">1 hour 32 mins</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 booking-history-date ">
+                    <div class="b-h-date">
+                      <p>11 July 2019</p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="col-12 d-sm-none d-md-block d-none">
+            <div class="booking-history-bg mt-2">
+              <div class="booking-history-bg-blue-img"></div>
+              <div class="from-to-address">
+                <div class="row">
+                  <div class="col-8">
+                    <div class="address-detail">
+                      <div class="row">
+                        <div class="col-12 col-md-6 col-lg-6">
+                          <div class="from-add">
+                            <h5 class="from">From</h5>
+                            <p class="mb-3 mb-sm-3 mb-md-3 mb-lg-0 mb-xl-0 mb-xxl-0">
+                              309, Swara Parklane,<br>Atabhai Chowk, Bhavnagar
+                            </p>
+                          </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-6">
+                          <div class="from-add">
+                            <h5 class="from">To</h5>
+                            <p class="mb-3 mb-sm-3 mb-md-3 mb-lg-0 mb-xl-0 mb-xxl-0">
+                              309, Swara Parklane,<br>Atabhai Chowk, Bhavnagar
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-4">
+                    <div class="rent-hour">
+                      <div class="row g-0">
+                        <div class="col-12 col-md-12 col-lg-6">
+                          <div class="rent">
+                            <h5>$500</h5>
+                          </div>
+                        </div>
+                        <div class="col-12 col-md-12 col-lg-6">
+                          <div class="hour">
+                            <p class="km">5000 km</p>
+                            <p class="hour-detail">1 hour 32 mins</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 booking-history-date">
+                    <div class="b-h-date">
+                      <p>11 July 2019</p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="col-12 d-sm-none d-md-block d-none">
+            <div class="booking-history-bg mt-2">
+              <div class="booking-history-bg-blue-img"></div>
+              <div class="from-to-address">
+                <div class="row">
+                  <div class="col-8">
+                    <div class="address-detail">
+                      <div class="row">
+                        <div class="col-12 col-md-6 col-lg-6">
+                          <div class="from-add">
+                            <h5 class="from">From</h5>
+                            <p class="mb-3 mb-sm-3 mb-md-3 mb-lg-0 mb-xl-0 mb-xxl-0">
+                              309, Swara Parklane,<br>Atabhai Chowk, Bhavnagar
+                            </p>
+                          </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-6">
+                          <div class="from-add">
+                            <h5 class="from">To</h5>
+                            <p class="mb-3 mb-sm-3 mb-md-3 mb-lg-0 mb-xl-0 mb-xxl-0">
+                              309, Swara Parklane,<br>Atabhai Chowk, Bhavnagar
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-4">
+                    <div class="rent-hour">
+                      <div class="row g-0">
+                        <div class="col-12 col-md-12 col-lg-6">
+                          <div class="rent">
+                            <h5>$500</h5>
+                          </div>
+                        </div>
+                        <div class="col-12 col-md-12 col-lg-6">
+                          <div class="hour">
+                            <p class="km">5000 km</p>
+                            <p class="hour-detail">1 hour 32 mins</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 booking-history-date">
+                    <div class="b-h-date">
+                      <p>11 July 2019</p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="col-12 d-sm-none d-md-block d-none">
+            <div class="booking-history-bg mt-2">
+              <div class="booking-history-bg-blue-img"></div>
+              <div class="from-to-address">
+                <div class="row">
+                  <div class="col-8">
+                    <div class="address-detail">
+                      <div class="row">
+                        <div class="col-12 col-md-6 col-lg-6">
+                          <div class="from-add">
+                            <h5 class="from">From</h5>
+                            <p class="mb-3 mb-sm-3 mb-md-3 mb-lg-0 mb-xl-0 mb-xxl-0">
+                              309, Swara Parklane,<br>Atabhai Chowk, Bhavnagar
+                            </p>
+                          </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-6">
+                          <div class="from-add">
+                            <h5 class="from">To</h5>
+                            <p class="mb-3 mb-sm-3 mb-md-3 mb-lg-0 mb-xl-0 mb-xxl-0">
+                              309, Swara Parklane,<br>Atabhai Chowk, Bhavnagar
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-4">
+                    <div class="rent-hour">
+                      <div class="row g-0">
+                        <div class="col-12 col-md-12 col-lg-6">
+                          <div class="rent">
+                            <h5>$500</h5>
+                          </div>
+                        </div>
+                        <div class="col-12 col-md-12 col-lg-6">
+                          <div class="hour">
+                            <p class="km">5000 km</p>
+                            <p class="hour-detail">1 hour 32 mins</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 booking-history-date">
+                    <div class="b-h-date">
+                      <p>11 July 2019</p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="col-12 d-sm-none d-md-block d-none">
+            <div class="booking-history-bg mt-2">
+              <div class="booking-history-bg-blue-img"></div>
+              <div class="from-to-address">
+                <div class="row">
+                  <div class="col-8">
+                    <div class="address-detail">
+                      <div class="row">
+                        <div class="col-12 col-md-6 col-lg-6">
+                          <div class="from-add">
+                            <h5 class="from">From</h5>
+                            <p class="mb-3 mb-sm-3 mb-md-3 mb-lg-0 mb-xl-0 mb-xxl-0">
+                              309, Swara Parklane,<br>Atabhai Chowk, Bhavnagar
+                            </p>
+                          </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-6">
+                          <div class="from-add">
+                            <h5 class="from">To</h5>
+                            <p class="mb-3 mb-sm-3 mb-md-3 mb-lg-0 mb-xl-0 mb-xxl-0">
+                              309, Swara Parklane,<br>Atabhai Chowk, Bhavnagar
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-4">
+                    <div class="rent-hour">
+                      <div class="row g-0">
+                        <div class="col-12 col-md-12 col-lg-6">
+                          <div class="rent">
+                            <h5>$500</h5>
+                          </div>
+                        </div>
+                        <div class="col-12 col-md-12 col-lg-6">
+                          <div class="hour">
+                            <p class="km">5000 km</p>
+                            <p class="hour-detail">1 hour 32 mins</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 booking-history-date">
+                    <div class="b-h-date">
+                      <p>11 July 2019</p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="last-div-effect" id="last">
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-arrow" id="scroll">
+        <a href="#" id="button"><i class="fa-sharp fa-solid fa-angle-down"></i></a>
+      </div>
+    </div>
+    <div class="booking-history-details2" id="mydiv">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 ">
+            <div class="booking-history-bg ">
+              <div class="booking-history-bg-blue-img"></div>
+              <div class="from-to-address">
+                <div class="row">
+                  <div class="col-8">
+                    <div class="address-detail">
+                      <div class="row">
+                        <div class="col-12 col-md-6 col-lg-6">
+                          <div class="from-add">
+                            <h5 class="from">From</h5>
+                            <p class="mb-3 mb-sm-3 mb-md-3 mb-lg-0 mb-xl-0 mb-xxl-0">
+                              309, Swara Parklane,<br>Atabhai Chowk, Bhavnagar
+                            </p>
+                          </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-6">
+                          <div class="from-add">
+                            <h5 class="from">To</h5>
+                            <p class="mb-3 mb-sm-3 mb-md-3 mb-lg-0 mb-xl-0 mb-xxl-0">
+                              309, Swara Parklane,<br>Atabhai Chowk, Bhavnagar
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-4">
+                    <div class="rent-hour">
+                      <div class="row g-0">
+                        <div class="col-12 col-md-12 col-lg-6">
+                          <div class="rent">
+                            <h5>$500</h5>
+                          </div>
+                        </div>
+                        <div class="col-12 col-md-12 col-lg-6">
+                          <div class="hour">
+                            <p class="km">5000 km</p>
+                            <p class="hour-detail">1 hour 32 mins</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 booking-history-date ">
+                    <div class="b-h-date">
+                      <p>11 July 2019</p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="col-12 d-sm-none d-md-block d-none">
+            <div class="booking-history-bg mt-2">
+              <div class="booking-history-bg-blue-img"></div>
+              <div class="from-to-address">
+                <div class="row">
+                  <div class="col-8">
+                    <div class="address-detail">
+                      <div class="row">
+                        <div class="col-12 col-md-6 col-lg-6">
+                          <div class="from-add">
+                            <h5 class="from">From</h5>
+                            <p class="mb-3 mb-sm-3 mb-md-3 mb-lg-0 mb-xl-0 mb-xxl-0">
+                              309, Swara Parklane,<br>Atabhai Chowk, Bhavnagar
+                            </p>
+                          </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-6">
+                          <div class="from-add">
+                            <h5 class="from">To</h5>
+                            <p class="mb-3 mb-sm-3 mb-md-3 mb-lg-0 mb-xl-0 mb-xxl-0">
+                              309, Swara Parklane,<br>Atabhai Chowk, Bhavnagar
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-4">
+                    <div class="rent-hour">
+                      <div class="row g-0">
+                        <div class="col-12 col-md-12 col-lg-6">
+                          <div class="rent">
+                            <h5>$500</h5>
+                          </div>
+                        </div>
+                        <div class="col-12 col-md-12 col-lg-6">
+                          <div class="hour">
+                            <p class="km">5000 km</p>
+                            <p class="hour-detail">1 hour 32 mins</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 booking-history-date">
+                    <div class="b-h-date">
+                      <p>11 July 2019</p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="col-12 d-sm-none d-md-block d-none">
+            <div class="booking-history-bg mt-2">
+              <div class="booking-history-bg-blue-img"></div>
+              <div class="from-to-address">
+                <div class="row">
+                  <div class="col-8">
+                    <div class="address-detail">
+                      <div class="row">
+                        <div class="col-12 col-md-6 col-lg-6">
+                          <div class="from-add">
+                            <h5 class="from">From</h5>
+                            <p class="mb-3 mb-sm-3 mb-md-3 mb-lg-0 mb-xl-0 mb-xxl-0">
+                              309, Swara Parklane,<br>Atabhai Chowk, Bhavnagar
+                            </p>
+                          </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-6">
+                          <div class="from-add">
+                            <h5 class="from">To</h5>
+                            <p class="mb-3 mb-sm-3 mb-md-3 mb-lg-0 mb-xl-0 mb-xxl-0">
+                              309, Swara Parklane,<br>Atabhai Chowk, Bhavnagar
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-4">
+                    <div class="rent-hour">
+                      <div class="row g-0">
+                        <div class="col-12 col-md-12 col-lg-6">
+                          <div class="rent">
+                            <h5>$500</h5>
+                          </div>
+                        </div>
+                        <div class="col-12 col-md-12 col-lg-6">
+                          <div class="hour">
+                            <p class="km">5000 km</p>
+                            <p class="hour-detail">1 hour 32 mins</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 booking-history-date">
+                    <div class="b-h-date">
+                      <p>11 July 2019</p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="col-12 d-sm-none d-md-block d-none">
+            <div class="booking-history-bg mt-2">
+              <div class="booking-history-bg-blue-img"></div>
+              <div class="from-to-address">
+                <div class="row">
+                  <div class="col-8">
+                    <div class="address-detail">
+                      <div class="row">
+                        <div class="col-12 col-md-6 col-lg-6">
+                          <div class="from-add">
+                            <h5 class="from">From</h5>
+                            <p class="mb-3 mb-sm-3 mb-md-3 mb-lg-0 mb-xl-0 mb-xxl-0">
+                              309, Swara Parklane,<br>Atabhai Chowk, Bhavnagar
+                            </p>
+                          </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-6">
+                          <div class="from-add">
+                            <h5 class="from">To</h5>
+                            <p class="mb-3 mb-sm-3 mb-md-3 mb-lg-0 mb-xl-0 mb-xxl-0">
+                              309, Swara Parklane,<br>Atabhai Chowk, Bhavnagar
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-4">
+                    <div class="rent-hour">
+                      <div class="row g-0">
+                        <div class="col-12 col-md-12 col-lg-6">
+                          <div class="rent">
+                            <h5>$500</h5>
+                          </div>
+                        </div>
+                        <div class="col-12 col-md-12 col-lg-6">
+                          <div class="hour">
+                            <p class="km">5000 km</p>
+                            <p class="hour-detail">1 hour 32 mins</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 booking-history-date">
+                    <div class="b-h-date">
+                      <p>11 July 2019</p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="col-12 d-sm-none d-md-block d-none">
+            <div class="booking-history-bg mt-2">
+              <div class="booking-history-bg-blue-img"></div>
+              <div class="from-to-address">
+                <div class="row">
+                  <div class="col-8">
+                    <div class="address-detail">
+                      <div class="row">
+                        <div class="col-12 col-md-6 col-lg-6">
+                          <div class="from-add">
+                            <h5 class="from">From</h5>
+                            <p class="mb-3 mb-sm-3 mb-md-3 mb-lg-0 mb-xl-0 mb-xxl-0">
+                              309, Swara Parklane,<br>Atabhai Chowk, Bhavnagar
+                            </p>
+                          </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-6">
+                          <div class="from-add">
+                            <h5 class="from">To</h5>
+                            <p class="mb-3 mb-sm-3 mb-md-3 mb-lg-0 mb-xl-0 mb-xxl-0">
+                              309, Swara Parklane,<br>Atabhai Chowk, Bhavnagar
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-4">
+                    <div class="rent-hour">
+                      <div class="row g-0">
+                        <div class="col-12 col-md-12 col-lg-6">
+                          <div class="rent">
+                            <h5>$500</h5>
+                          </div>
+                        </div>
+                        <div class="col-12 col-md-12 col-lg-6">
+                          <div class="hour">
+                            <p class="km">5000 km</p>
+                            <p class="hour-detail">1 hour 32 mins</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 booking-history-date">
+                    <div class="b-h-date">
+                      <p>11 July 2019</p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+  </section>
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="footer_logo">
+            <img src="images/footer_logo_back.png">
+            <div class="footer_logo_img" style="position: absolute; ">
+              <img src="images/footer_logo.png">
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="footer-menu">
+            <!-- <div class="row ">
+                   <div class="col-3">
+                      <div class="footer-link">
+                         <a href="contact.html">Contact</a>
+                      </div>
+                   </div>
+                   <div class="col-3">
+                      <div class="footer-link">
+                         <a href="booking_history.html">Booking history</a>
+                      </div>
+                   </div>
+                   <div class="col-3">
+                      <div class="footer-link">
+                         <a href="about-us.html">About us</a>
+                      </div>
+                   </div>
+                </div> -->
+            <ul>
+              <li><a href="contact.html" title="Contact">Contact</a></li>
+              <li><a href="booking_history.html" title="Booking history">Booking history</a></li>
+              <li><a href="about-us.html" title="About us">About us</a></li>
+              <!-- <li><a href="#" title="letter-spacing">letter-spacing</a></li>
+                   <li><a href="#" title="line-height">line-height</a></li> -->
+            </ul>
+            <!-- <ul>
+                   <li><a href="contact.html" title="Contact">Contact</a></li>
+                   <li><a href="booking_history.html" tite="Booking history">Booking history</a></li>
+                   <li><a href="about-us.html" title="About us">About us</a></li>
+                </ul> -->
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="social-icon">
+            <div class="social-icon-background">
+              <div class="facebook">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+              </div>
+            </div>
+            <div class="social-icon-background">
+              <div class="twitter">
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+              </div>
+            </div>
+            <div class="social-icon-background">
+              <div class="instagram">
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+              </div>
+            </div>
+            <div class="social-icon-background">
+              <div class="google-plus">
+                <a href="#"><i class="fa-brands fa-google-plus-g"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="copyright">
+            <p>&#169; Hyvikk Solutions 2019.All Rights Reserved.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
+
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <!-- <script type="text/javascript"
+         src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script> -->
+  <script>
+    $(function () {
+      $("#button").click(function () {
+        $('html, body').animate({
+          scrollTop: $("#mydiv").offset().top
+        }, 500);
+        jQuery('#button').on('click', function (event) {
+          jQuery('#mydiv').show();
+        });
+        jQuery('#button').on('click', function (event) {
+          jQuery('#last').hide();
+          jQuery('#scroll').hide();
+        });
+      });
+    });
+
+  </script>
+  <script>
+    $(document).ready(function () {
+      $(".book-now").click(function () {
+        $(".date-time").css("display", "none", " transition", "all .3s ease");
+      });
+      $(".book-later").click(function () {
+        $(".date-time").css("display", "block");
+      });
+      var readURL = function (input) {
+        if (input.files && input.files[0]) {
+          var reader = new FileReader();
+
+          reader.onload = function (e) {
+            $('.profile-pic').attr('src', e.target.result);
+          }
+
+          reader.readAsDataURL(input.files[0]);
+        }
+      }
+      $(".file-upload").on('change', function () {
+        readURL(this);
+      });
+      $(".upload-button").on('click', function () {
+        $(".file-upload").click();
+      });
+    });
+  </script>
+</body>
+
+</html>

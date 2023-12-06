@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <title>Fleet Manager</title>
+   <link rel="icon" type="image/x-icon" href="images/footer_logo.png">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+   <link rel="stylesheet" type="text/css" href="http://kenwheeler.github.io/slick/slick/slick-theme.css" />
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/css/datepicker.min.css"
+      rel="stylesheet">
+
+   <link rel="stylesheet" href="css/owl.carousel.min.css">
+   <link rel="stylesheet" href="css/owl.theme.default.css">
+   <link href="font/stylesheet.css" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+   <!-- custom css -->
+   <link href="css/style.css" rel="stylesheet">
+   <style>
+      .footer-menu {
+         width: 100%;
+      }
+      .footer-link {
+         display: flex;
+         justify-content: center;
+      }
+      .icon {
+         display: flex;
+         flex-direction: column;
+      }
+      .number-input-container {
+         position: relative;
+         display: inline-block;
+         text-align: center;
+      }
+      .number-input-container input[type="number"] {
+         width: 100px;
+         padding: 5px 12px;
+         border: 1px solid #ccc;
+      }
+      .number-input-container input[type="number"]::-webkit-inner-spin-button,
+      .number-input-container input[type="number"]::-webkit-outer-spin-button {
+         -webkit-appearance: none;
+         appearance: none;
+         margin: 0;
+      }
+      .number-input-container .increment {
+         display: block;
+         font-weight: 900;
+         color: #333;
+         cursor: pointer;
+         position: absolute;
+         top: 1px;
+      }
+      .number-input-container .decrement {
+         display: block;
+         font-weight: 900;
+         color: #333;
+         cursor: pointer;
+         position: absolute;
+      }
+
+      .number-input-container .increment {
+         right: 0%;
+         transform: translateX(-50%);
+      }
+      .number-input-container .decrement {
+         right: 0%;
+         transform: translateX(-50%);
+         bottom: 1px;
+      }
+      input[type="time"]::-webkit-calendar-picker-indicator,
+      input[type="time"]::-webkit-inner-spin-button,
+      input[type="time"]::-webkit-clear-button {
+         display: none;
+      }
+      .datetime {
+         display: flex;
+      }
+      @media only screen and (max-width:576px) {
+         .datetime {
+            display: flex;
+            flex-direction: column;
+         }
+         .datetime .time {
+            margin-top: 1rem;
+            width: 100%;
+            margin-left: 0px;
+         }
+         .datetime .date {
+            width: 100%;
+         }
+      }
+   </style>
+</head>
+<body>
+
+   <!--Add Scripts-->
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+   integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+   crossorigin="anonymous"></script>
+
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script
+     src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/js/bootstrap-datepicker.min.js"></script>
+  <script src="owl.carousel.js"></script>
+  <script src="owl.carousel.min.js"></script>
+  <script>
+     // Add a click event listener to the labels to toggle the radio buttons
+     const labels = document.querySelectorAll('.edit-gender-btn label');
+     labels.forEach(label => {
+         label.addEventListener('click', () => {
+             const input = label.previousElementSibling; // Get the associated input
+             input.checked = !input.checked; // Toggle the checked state
+         });
+     });
+ </script>
+</body>
+</html>

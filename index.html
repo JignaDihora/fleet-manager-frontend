@@ -1,0 +1,1581 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <title>Fleet Manager</title>
+   <link rel="icon" type="image/x-icon" href="images/fleet_favicon.png" sizes="11x16">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/css/datepicker.min.css"
+      rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+   <!-- custom css -->
+   <link rel="stylesheet" href="css/owl.carousel.min.css">
+   <link rel="stylesheet" href="css/owl.theme.default.css">
+   <link href="font/stylesheet.css" rel="stylesheet">
+   <link href="css/style.css" rel="stylesheet">
+   <style>
+      .footer-menu {
+         width: 100%;
+      }
+
+      .footer-link {
+         display: flex;
+         justify-content: center;
+      }
+
+      .icon {
+         display: flex;
+         flex-direction: column;
+      }
+
+      .number-input-container {
+         position: relative;
+         display: inline-block;
+         text-align: center;
+      }
+
+      .number-input-container input[type="number"] {
+         width: 100px;
+         padding: 5px 12px;
+         border: 1px solid #ccc;
+      }
+
+      .number-input-container input[type="number"]::-webkit-inner-spin-button,
+      .number-input-container input[type="number"]::-webkit-outer-spin-button {
+         -webkit-appearance: none;
+         appearance: none;
+         margin: 0;
+      }
+
+      .number-input-container .increment {
+         display: block;
+         font-weight: 900;
+         color: #333;
+         cursor: pointer;
+         position: absolute;
+         top: 1px;
+      }
+
+      .number-input-container .decrement {
+         display: block;
+         font-weight: 900;
+         color: #333;
+         cursor: pointer;
+         position: absolute;
+      }
+
+      .number-input-container .increment {
+         right: 0%;
+         transform: translateX(-50%);
+      }
+
+      .number-input-container .decrement {
+         right: 0%;
+         transform: translateX(-50%);
+         bottom: 1px;
+      }
+
+      input[type="time"]::-webkit-calendar-picker-indicator,
+      input[type="time"]::-webkit-inner-spin-button,
+      input[type="time"]::-webkit-clear-button {
+         display: none;
+      }
+
+      .datetime {
+         width: 100%;
+         display: flex;
+      }
+
+      .custom-select {
+         border: unset;
+         width: 100%;
+         max-width: 400px;
+         border: 1px solid #ced4da;
+         appearance: none;
+         background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23131313%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+         background-repeat: no-repeat;
+         background-position: right 0.7rem top 50%;
+         background-size: 0.65rem auto;
+      }
+
+      @media only screen and (max-width:992px) {
+         .custom-select {
+            max-width: unset !important;
+         }
+      }
+
+      @media only screen and (max-width:576px) {
+         .datetime {
+            display: flex;
+            flex-direction: column;
+         }
+
+         .datetime .time {
+            margin-top: 1rem;
+            width: 100%;
+            margin-left: 0px;
+         }
+
+         .datetime .date {
+            width: 100%;
+         }
+
+         .hero-slider .owl-carousel {
+            z-index: 0;
+         }
+      }
+
+      .close.btn-check:focus+.close.btn,
+      .close.btn:focus {
+         border-color: #fff !important;
+      }
+
+      .close.btn-check:active+.btn,
+      .close.btn-check:checked+.btn,
+      .close.btn.active,
+      .close.btn.show,
+      .close.btn:active {
+         border-color: #fff !important;
+      }
+   </style>
+</head>
+
+<body>
+   <!--header section start-->
+   <div class="header" style="position:relative">
+      <nav class="navbar navbar-expand-lg">
+         <div class="container-fluid">
+            <div class="main-menubar">
+               <a class="navbar-brand" href="index.html"><img src="images/logo_dark.png"></a>
+               <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false"
+                  aria-label="Toggle navigation">
+                  <span class="my-1 mx-2 close"><i class="fa fa-xmark"></i></span>
+                  <span class="navbar-toggler-icon"></span>
+               </button>
+               <div class="collapse navbar-collapse" id="navbarsExample09">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="booking_history.html">Booking history</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="about-us.html">About us</a>
+                     </li>
+                     <li class="nav-item logout-btn-res d-lg-none">
+                        <button class="btn header-logout-btn d-md-flex d-lg-none"><a href="index2.html">Logout</a></button>
+                        <!-- <a class="nav-link" href="#">About us</a> -->
+                        <!-- <button class="btn header-logout-btn d-md-flex d-lg-none">Logout</button> -->
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="dropdown text-end">
+               <a href="#" class="d-block link-dark-none text-decoration-none" data-bs-toggle="modal"
+                  data-bs-target="#profile-detail">
+                  <div class="img-back-shadow">
+                     <img src="images/testimonial.png" alt="mdo" class="rounded-circle">
+                  </div>
+               </a>
+            </div>
+            <div class="profile-detail-modal">
+               <div class="modal fade" id="profile-detail" tabindex="-1" aria-labelledby="profile-detail"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-md">
+                     <div class="modal-content">
+                        <div class="modal-header ">
+                           <div class="edit-profile">
+                              <a href="#" data-bs-toggle="modal" data-bs-target="#edit_profile">Edit Profile</a>
+                           </div>
+                           <button type="button" class="close btn d-lg-none d-md-none d-sm-flex" data-bs-dismiss="modal"
+                              aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                           </button>
+                        </div>
+                        <div class="modal-body">
+                           <!-- <div class="row">
+                                    <div class="col-12">
+                                       <div class="edit-profile">
+                                          <a href="#"  data-bs-toggle="modal" data-bs-target="#edit_profile">Edit Profile</a>                                    
+                                       </div>
+                                    </div>
+                                 </div> -->
+                           <div class="container">
+                              <div class="row profile-sec">
+                                 <div class="col-lg-6 col-md-6 col-12 justify-content-sm-center">
+                                    <div class="profile-img">
+                                       <img src="images/l3.png" alt="">
+                                       <div class="profile-img-on-name ">
+                                          <p style="font-weight: bold;letter-spacing: .8px;">Kathriane Langford</p>
+                                          <p style="font-weight: lighter;">Female</p>
+                                       </div>
+                                    </div>
+                                    <div class="profile-img-bottom-name ">
+                                       <p style="font-weight: bold;letter-spacing: .8px;">Kathriane Langford</p>
+                                       <p style="font-weight: lighter;">Female</p>
+                                    </div>
+                                 </div>
+                                 <div class="col-lg-6 col-md-6 col-12">
+                                    <div class="profile-phone-email">
+                                       <div class="row">
+                                          <div class="col-12 ">
+                                             <div class="profile-phone">
+                                                <p>Phone</p>
+                                             </div>
+                                          </div>
+                                          <div class="col-12 ">
+                                             <div class="profile-phone-nu">
+                                                <p>+91 9153456788</p>
+                                             </div>
+                                          </div>
+                                          <div class="col-12 ">
+                                             <div class="profile-phone">
+                                                <p>Email</p>
+                                             </div>
+                                          </div>
+                                          <div class="col-12 ">
+                                             <div class="profile-phone-nu">
+                                                <p>enquiry@hyvikk.com</p>
+                                             </div>
+                                          </div>
+                                          <div class="col-12">
+                                             <div class="profile-logout">
+                                                <a href="index2.html" class="btn">Logout</a>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="edit-profile-modal">
+               <div class="modal fade" id="edit_profile" tabindex="-1" aria-labelledby="edit_profile"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-md">
+
+                     <div class="modal-content">
+                        <div class="modal-header d-lg-none d-md-none d-sm-flex d-flex" style="padding: 0rem 1.5rem;">
+                           <div class="edit-title  mt-0">
+                              <h3>Edit Profile</h3>
+                              <div class="line"></div>
+                           </div>
+                           <button type="button" class="close btn" data-bs-dismiss="modal" aria-label="close">
+                              <span aria-hidden="true">×</span>
+                           </button>
+                        </div>
+                        <!-- <div class="modal-header d-lg-none d-md-none d-sm-flex d-none">
+                        <button type="button" class="close btn" data-bs-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div> -->
+                        <div class="modal-body">
+                           <div class="container-fluid">
+                              <div class="row">
+                                 <div
+                                    class="col-md-8 col-sm-12  pe-0 ps-0 order-last order-sm-last order-md-first oder-lg-first ">
+                                    <div class="edit-profile-popup">
+                                       <div class="container">
+                                          <div class="row">
+                                             <div class="col-12 p-0">
+                                                <div class="edit-profile-title ">
+                                                   <div class="edit-title d-none d-sm-none d-md-block d-xl-block">
+                                                      <h3>Edit Profile</h3>
+                                                      <div class="line"></div>
+                                                   </div>
+                                                   <div class="edit-profile-form">
+                                                      <div class="container">
+                                                         <div class="row">
+                                                            <div class="col-12">
+                                                               <form class="row mt-4">
+                                                                  <div class="col-md-12  gender-btn-edit-profile">
+                                                                     <div class="row ">
+                                                                        <div class="col-4">
+                                                                           <label
+                                                                              class="form-label gender-label">Gender</label>
+                                                                        </div>
+                                                                        <!-- <div class="col-4">
+                                                                  <button class="btn" href="#">Male</button>
+                                                                </div>
+                                                                <div class="col-4 .e-btn-group">
+                                                                   <button class="btn">Female</button> 
+                                                                  <input type="radio" id="radioleft" name="align" value="left" />
+                                                                  <label class="e-btn" for="radioleft">Left</label>
+                                                                </div> -->
+                                                                        <div class="col-8 p-0">
+                                                                           <ul class="edit-gender-btn">
+                                                                              <li>
+                                                                                 <input type="radio" id="a25"
+                                                                                    name="amount"
+                                                                                    style="cursor:pointer" />
+                                                                                 <label for="a25">Male</label>
+                                                                              </li>
+                                                                              <li>
+                                                                                 <input type="radio" id="a50"
+                                                                                    name="amount"
+                                                                                    style="cursor:pointer" />
+                                                                                 <label for="a50">Female</label>
+                                                                              </li>
+                                                                           </ul>
+                                                                        </div>
+                                                                     </div>
+                                                                  </div>
+                                                                  <div class="col-12  input-effect edit-form">
+                                                                     <input class="effect-22 form-control" type="text"
+                                                                        placeholder="">
+                                                                     <label class="form-label"
+                                                                        style="position:absolute;">Name</label>
+                                                                     <span class="focus-bg"></span>
+                                                                  </div>
+                                                                  <div class="col-12  input-effect edit-form">
+                                                                     <input class="effect-22 form-control" type="text"
+                                                                        placeholder="">
+                                                                     <label class="form-label"
+                                                                        style="position:absolute;">Mobile</label>
+                                                                     <span class="focus-bg"></span>
+                                                                  </div>
+                                                                  <div class="col-12 input-effect edit-form">
+                                                                     <input class="effect-22 form-control" type="email"
+                                                                        placeholder="">
+                                                                     <label class="form-label"
+                                                                        style="position:absolute;">Email</label>
+                                                                     <span class="focus-bg"></span>
+                                                                  </div>
+                                                                  <div class="col-12 edit-profile-confirm-btn">
+                                                                     <a href="index.html"><button class="btn"
+                                                                           type="button">Confirm</button></a>
+                                                                  </div>
+                                                               </form>
+                                                            </div>
+                                                         </div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                                <div class="col-12">
+                                                   <div
+                                                      class="reset-password-link mt-3 mb-4 mb-sm-4  mb-md-0 mb-lg-0 mb-xl-0">
+                                                      <a href="#" data-bs-toggle="modal"
+                                                         data-bs-target="#reset_password">Reset Password</a>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+
+                                 </div>
+                                 <div class="col-md-4 col-sm-12 ps-0 pe-0  order-sm-first order-lg-last">
+                                    <div class="edit-title d-lg-none d-md-none d-sm-none d-none ps-sm-5 ps-5">
+                                       <h3>Edit Profile</h3>
+                                       <div class="line"></div>
+                                    </div>
+                                    <div class="edit-profile-img">
+                                       <div class="profile-round-img">
+                                          <div class="p-r-img ">
+                                             <img class="user-profile" src="images/l6.png">
+                                             <div class="p-r-img-overlay">
+                                                <a href="#" class="upload-button">Edit Profile</a>
+                                                <input class="file-upload" type="file" accept="image/*">
+                                             </div>
+                                          </div>
+                                          <!-- <div class="circle d-sm-flex d-md-none d-lg-none">
+                                          <img class="profile-pic" src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg">
+                                   
+                                        </div>
+                                        <div class="p-image d-sm-flex d-md-none d-lg-none">
+                                          <i class="fa fa-camera upload-button"></i> 
+                                          <a href="#" class="upload-button">edit profile</a>
+                                           <input class="file-upload" type="file" accept="image/*"/>
+                                        </div> -->
+
+                                       </div>
+                                       <div class="profile-bottom-round-img">
+                                          <div class="round-profile">
+                                             <img src="images/profile-round.png" alt="">
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="reset-password background-container">
+               <div class="modal fade" id="reset_password" tabindex="-1" aria-labelledby="reset_password"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-md">
+                     <div class="modal-content">
+                        <div class="modal-header d-lg-none d-md-none d-sm-flex d-flex" style="padding: 0rem 1.5rem;">
+                           <div class="reset-title  mt-0">
+                              <h3>Reset Password</h3>
+                              <div class="line"></div>
+                           </div>
+                           <button type="button" class="close btn" data-bs-dismiss="modal" aria-label="close">
+                              <span aria-hidden="true">×</span>
+                           </button>
+                        </div>
+                        <div class="modal-body">
+                           <div class="container">
+                              <div class="row">
+                                 <div
+                                    class="col-md-8 col-sm-12 ps-0 pe-0 order-last order-sm-last order-md-first oder-lg-first">
+                                    <div class="resetpass-profile-popup">
+                                       <div class="container">
+                                          <div class="row">
+                                             <div class="col-12">
+                                                <div class="resetpass-profile-title">
+                                                   <div class="reset-title d-lg-block d-md-block d-sm-none d-none">
+                                                      <h3>Reset Password</h3>
+                                                      <div class="line"></div>
+                                                   </div>
+                                                   <div class="reset-pass-form">
+                                                      <div class="row">
+                                                         <div class="col-12">
+                                                            <form class="row mt-4">
+                                                               <div class="col-12  input-effect reset-form">
+                                                                  <input class="effect-22 form-control" type="text"
+                                                                     placeholder="">
+                                                                  <label class="form-label"
+                                                                     style="position:absolute;">Enter current
+                                                                     password</label>
+                                                                  <span class="focus-bg"></span>
+                                                               </div>
+                                                               <div class="col-12">
+                                                                  <div class="enter-pass-line">
+
+                                                                  </div>
+                                                               </div>
+                                                               <div class="col-12  input-effect reset-form"
+                                                                  style="margin-top:10px">
+                                                                  <input class="effect-22 form-control" type="text"
+                                                                     placeholder="">
+                                                                  <label class="form-label"
+                                                                     style="position:absolute;">Enter new
+                                                                     password</label>
+                                                                  <span class="focus-bg"></span>
+                                                               </div>
+
+                                                               <div class="col-12 input-effect reset-form">
+                                                                  <input class="effect-22 form-control" type="email"
+                                                                     placeholder="">
+                                                                  <label class="form-label"
+                                                                     style="position:absolute;">Confirm new password
+                                                                  </label>
+                                                                  <span class="focus-bg"></span>
+
+                                                               </div>
+                                                               <div class="col-12 reset-update-pass-btn">
+                                                                  <a href="index.html" class="btn">Update password</a>
+                                                               </div>
+                                                            </form>
+                                                         </div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="col-md-4 col-sm-12 ps-0 pe-0  order-sm-first order-lg-last">
+                                    <!-- <div class="reset-title d-lg-none d-md-none d-sm-block d-block ps-sm-5 ps-5">
+                              <h3>Reset Password</h3>
+                              <div class="line"></div>
+                           </div>  -->
+                                    <div class="reset-pass-img" style="">
+                                       <div class="reset-round-img">
+                                          <div class="r-r-img">
+                                             <img src="images/l6.png">
+                                          </div>
+                                       </div>
+                                       <div class="profile-bottom-round-img">
+                                          <div class="round-profile">
+                                             <img src="images/profile-round.png" alt="">
+                                          </div>
+                                       </div>
+                                    </div>
+
+
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </nav>
+
+   </div>
+
+   <!--header section start-->
+   <section class="hero-section background-container">
+      <div class="hero-section-round">
+         <img src="images/round.png" class="hero-section-round-1">
+         <img src="images/Rectangle.png" class="hero-section-shadow">
+      </div>
+      <div class="hero-slider">
+         <div class="owl-carousel owl-theme">
+            <div>
+               <div class="main-slider">
+                  <div class="row">
+                     <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12 order-md-first  order-sm-last">
+                        <div class="main-slider-content">
+                           <h1>Reliable way to book a cab</h1>
+                           <h4><a href="#">+91 9874563210</a></h4>
+                           <button type="submit" class="btn book-now-main-slider">Book Now</button>
+                        </div>
+                     </div>
+                     <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12 order-md-last order-sm-first">
+                        <div class="main-slider-img">
+                           <img src="images/slide1.png">
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div>
+               <div class="main-slider">
+                  <div class="row">
+                     <div class="col-md-6 col-lg-6 col-sm-12 order-md-first order-sm-last">
+                        <div class="main-slider-content">
+                           <h1>Reliable way to book a cab</h1>
+                           <h4><a href="#">+91 9874563210</a></h4>
+                           <button type="submit" class="btn book-now-main-slider">Book Now</button>
+                        </div>
+                     </div>
+                     <div class="col-md-6 col-lg-6 col-sm-12 order-md-last order-sm-first pe-0">
+                        <div class="main-slider-img">
+                           <img src="images/slide1.png">
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div>
+               <div class="main-slider">
+                  <div class="row">
+                     <div class="col-md-6 col-lg-6 col-sm-12 order-md-first order-sm-last">
+                        <div class="main-slider-content">
+                           <h1>Reliable way to book a cab</h1>
+                           <h4><a href="#">+91 9874563210</a></h4>
+                           <button type="submit" class="btn book-now-main-slider">Book Now</button>
+                        </div>
+                     </div>
+                     <div class="col-md-6 col-lg-6 col-sm-12 order-md-last order-sm-first">
+                        <div class="main-slider-img">
+                           <img src="images/slide1.png">
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+         </div>
+      </div>
+
+   </section>
+   <!--book-a-cab-detail section start-->
+   <section class="book-a-cab-detail">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-12 ">
+               <div class="feet-img">
+                  <img src="images/FLEET.png">
+               </div>
+            </div>
+            <div class="col-12 mt-5 mt-sm-2 mt-md-3 mt-lg-5 mt-xl-5">
+               <div class="our-vehicle-heading">
+                  <h1>Book a cab</h1>
+               </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+               <div class="container">
+                  <div class="book-cab-form m-0 ">
+                     <!-- <h1>Book a cab</h1> -->
+                     <form class="row mt-2">
+                        <div class="col-md-12 col-sm-12 col-lg-12 form-group book-for-label">
+                           <div class="row" style="display:flex;align-items:center;">
+                              <div class="col-4 col-sm-4 col-md-4 col-lg-4 ">
+                                 <label for="inputEmail" class="form-label">Book for</label>
+                              </div>
+                              <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xxl-8">
+                                 <div class="btn-now" role="group">
+                                    <div type="button" class="btn now  book-now" onclick="">Now</div>
+                                    <div type="button" class="btn now active ms-3 book-later">Later</div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-md-12  input-effect pickup-dropoff-address">
+                           <input class="effect-22 form-control" type="text" placeholder="">
+                           <label class="form-label" style="position:absolute;">Pickup Address</label>
+                           <span class="focus-bg"></span>
+                        </div>
+
+                        <div class="col-md-12 input-effect pickup-dropoff-address">
+                           <input class="effect-22 form-control" type="text" placeholder="">
+                           <label class="form-label" style="position:absolute;">Dropoff Address</label>
+                           <span class="focus-bg"></span>
+                        </div>
+                        <div class="col-md-12 vehicle-type">
+                           <div class="row">
+                              <div class="col-6  col-sm-6 col-md-4 col-lg-4 col-xl-4 col-xxl-4 vehicle-type-label">
+                                 <label for="inputEmail4" class="form-label">Vehicle
+                                    Type</label>
+                              </div>
+                              <div class="col-6 col-sm-6 col-md-8  col-lg-8 col-xl-8 col-xxl-8">
+
+                                 <select class="form-select float-end custom-select " aria-label="vehicle type">
+                                    <option selected disabled>Vehicle
+                                       Type</option>
+                                    <option value="1">Mini Van</option>
+                                    <option value="1">Hatchback</option>
+                                    <option value="2">sedan</option>
+                                    <option value="3">Saloon</option>
+                                    <option value="1">SUV</option>
+                                    <option value="2">Bus</option>
+                                    <option value="3">Truck</option>
+                                 </select>
+
+                              </div>
+                           </div>
+
+                        </div>
+                        <!-- <div class="col-md-6 vehicle-type">
+                        
+                     </div> -->
+                        <div class="col-md-12 form-group num-person">
+                           <div class="row">
+                              <div class="col-6  col-sm-6 col-md-4 col-lg-4 col-xl-4 col-xxl-4 num-person-label">
+                                 <label for="inputState" class="form-label ">No. of
+                                    persons</label>
+                              </div>
+                              <div
+                                 class="col-6  col-sm-6  col-md-8 col-lg-8 col-xl-8 col-xxl-8 justify-content-lg-start   num-person-input">
+                                 <!-- <input type="number" class="form-control w-50"
+                              id="quantity" min="0" value="1"> -->
+                                 <!-- <input type="number" class="form-control" value="2" min="0" max="10" step="1"> -->
+                                 <!-- <div class="number-input-container">
+                                    <input type="number" class="form-control has-content" value="2" min="0" max="10" step="1">
+                                </div> -->
+                                 <!-- <div class="number-input-container">
+                                 <input type="number" class="form-control has-content" value="2" min="0" max="10" step="1">
+                                 <span class="custom-icon before-icon">&#xf0de</span>
+                                 <span class="custom-icon after-icon">&#xf0dd</span>
+                             </div> -->
+                                 <div class="number-input-container">
+                                    <input type="number" class="form-control has-content" value="2" min="0" max="10"
+                                       step="1">
+                                    <div class="icon">
+                                       <div class="increment"><i class="fas fa-sort-up increment-icon"></i></div>
+                                       <div class="decrement"><i class="fas fa-sort-down decrement-icon"></i></div>
+                                    </div>
+                                 </div>
+
+                              </div>
+                           </div>
+                        </div>
+                        <!-- <div class="col-md-3">
+                      
+                     </div> -->
+                        <div class="col-md-12 form-group date-time">
+                           <div class="row">
+                              <div class="col-6  col-sm-6 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+                                 <label for="inputState" id="current_data_time" class="form-label">Pickup
+                                    date & Time</label>
+                              </div>
+                              <div class="col-6 col-sm-6 col-md-8  col-lg-8 col-xl-8 col-xxl-8 d-flex">
+                                 <div class="datetime">
+                                    <input type="text" class="form-control date" name="datepicker" id="datepicker"
+                                       placeholder="" vlaue="" />
+                                    <!-- <input type="time" class="form-control time" id="" min="1:00" max="12:00"> -->
+                                    <input type="time" class="form-control time has-content" id="myTimeInput" min="1:00"
+                                       max="12:00" value="08:00" onclick="this.showPicker()"
+                                       onfocus="this.showPicker()">
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-md-12 form-group cab-form-text-area">
+                           <textarea class="form-control" rows="4" cols="30" placeholder="Other Things We Should Know"
+                              style="resize: none;opacity: 0.5;"></textarea>
+                        </div>
+                        <div class="col-md-12 book-cab-submit">
+                           <button type="submit" class="btn ">Book</button>
+                        </div>
+                     </form>
+                  </div>
+               </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-none d-sm-none d-md-none d-lg-block d-xl-block">
+               <!-- <div class="book-cab-sideimg"></div> -->
+               <div class="car-img">
+                  <img src="images/round.png" class="round-shape">
+                  <img src="images/tesla_car_PNG58.png" class="tesla-car-backimg">
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <section class="our-vehicles  mt-2 mt-sm-2 mt-md-3 mt-lg-5 mt-xl-5">
+      <div class="container ">
+         <div class="row">
+            <div class="col-12 mt-5 mt-sm-2 mt-md-3 mt-lg-5 mt-xl-5">
+               <div class="our-vehicle-heading">
+                  <h1>Our Vehicles</h1>
+               </div>
+            </div>
+            <div class=" col-12 col-md-6 col-sm-12 col-lg-8">
+               <div class="slideshow">
+                  <div class="owl-carousel">
+                     <div class="slides"> <img src="images/tesla_car_PNG37.png" style="width:100%;"></div>
+                     <div class="slides"> <img src="images/tesla_car_PNG21.png" style="width:100%;"></div>
+                     <div class="slides"> <img src="images/tesla_car_PNG37.png" style="width:100%;"></div>
+                     <div class="slides"> <img src="images/tesla_car_PNG21.png" style="width:100%;"></div>
+
+                  </div>
+                  <div class="car-slider-dots">
+                     <div class="dots-line"></div>
+                  </div>
+
+                  <div id="counter"></div>
+               </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-sm-12 col-lg-4">
+               <div class="car-features">
+                  <span>Mini car</span>
+                  <h2>Model S</h2>
+                  <div class="line"></div>
+                  <div class="car-features-col">
+                     <div class="row">
+                        <div class="col-6 col-md-6 col-sm-6 col-lg-6 col-xxl-6 px-2 px-sm-4 px-md-2 px-lg-2 px-xl-4 ">
+                           <div class="car-features-detail" onmouseover="mouseover()" onmouseout="mouseout()">
+                              <div class="tesla-dark-logo">
+                                 <img src="images/tesla-dark.png" class="tesla-dark" id="img1">
+                                 <img src="images/tesla-white.png" class="tesla-white" id="img2">
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-6 col-md-6 col-sm-6 col-lg-6 col-xxl-6 px-2 px-sm-4 px-md-2 px-lg-2 px-xl-4 ">
+                           <div class="car-features-detail">
+                              <div class="passanger">
+                                 <p style="font-size:32px;font-weight:500;padding-top:35px">2</p>
+                                 <p style="padding-top:27px;">Passanger</p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="row">
+                        <div class="col-6 col-md-6 col-sm-6 col-lg-6 col-xxl-6 px-2 px-sm-4 px-md-2 px-lg-2 px-xl-4 ">
+                           <div class="car-features-detail">
+                              <div class="rating">
+                                 <p style="font-size:32px;font-weight:500;padding-top:30px">5<span style="font-weight:
+                                       normal;padding-left:
+                                       5px;">/
+                                       10</span></p>
+                                 <p style="padding-top:33px;">Ratings</p>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-6 col-md-6 col-sm-6 col-lg-6 col-xxl-6 px-2 px-sm-4 px-md-2 px-lg-2 px-xl-4 ">
+                           <div class="car-features-detail">
+                              <div class="mileage">
+                                 <p class="mileage-space" style="font-size:32px;font-weight:500;padding-top:30px;">100
+                                 </p>
+                                 <p>
+                                    <span style="font-weight: normal;">kmpg</span>
+                                 </p>
+                                 <p style="padding-top:19px;">Mileage</p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+   </section>
+   <section class="our-services">
+      <div class="container  counter-parent">
+         <div class="row">
+            <div class="col-md-12 ">
+               <div class="our-services-heading">
+                  <h1>Our Services</h1>
+               </div>
+            </div>
+         </div>
+         <div id="counter1"></div>
+         <div class="dots-line"></div>
+         <div class="owl-carousel owl-carousel-vertical " style="margin-top: 30px;position:relative;">
+            <div class="slides">
+               <div class="row">
+                  <div class="col-12 col-lg-4 col-md-6 col-sm-12  order-lg-first  order-md-first order-sm-last">
+                     <div class="services-content">
+                        <div class="services-1">
+                           <div class="row">
+                              <div class="col-md-6 ">
+                                 <div class="services-1-heading">
+                                    <h3>Logistics</h3>
+                                    <div class="line"></div>
+                                 </div>
+                              </div>
+                              <div class="col-md-6 ">
+                                 <div class="services-1-truckimg">
+                                    <img src="images/service.png">
+                                 </div>
+                              </div>
+                              <div class="col-md-12 ">
+                                 <div class="services-1-content">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, ipsam. Modi,
+                                       at? Odio dolore, repellat qui excepturi assumenda exercitationem temporibus
+                                       facere nisi quas culpa ducimus, minima minus illo quaerat eos.Officia, ipsam.
+                                       Modi temporibus facere nisi quas culpa ducimus, minima minus illo quaerat eos.
+                                    </p>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-12 col-sm-12 col-md-6 col-lg-8 order-lg-last  order-lg-last order-sm-first">
+                     <div class="services-1-img">
+                        <img src="images/Mask.png">
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="slides">
+               <div class="row">
+                  <div class="col-lg-4 col-md-6 col-sm-12 order-lg-first order-md-first order-sm-last">
+                     <div class="services-content">
+                        <div class="services-1">
+                           <div class="row">
+                              <div class="col-md-7">
+                                 <div class="services-1-heading">
+                                    <h3>Home pickups</h3>
+                                    <div class="line"></div>
+                                 </div>
+                              </div>
+                              <div class="col-md-5">
+                                 <div class="services-1-truckimg">
+                                    <img src="images/service.png">
+                                 </div>
+                              </div>
+                              <div class="col-md-12">
+                                 <div class="services-1-content">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, ipsam. Modi,
+                                       at? Odio dolore, repellat qui excepturi assumenda exercitationem temporibus
+                                       facere nisi quas culpa ducimus, minima minus illo quaerat eos.Officia, ipsam.
+                                       Modi temporibus facere nisi quas culpa ducimus, minima minus illo quaerat eos.
+                                    </p>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-md-6 col-lg-8 order-lg-last order-md-last order-sm-first">
+                     <div class="services-1-img">
+                        <img src="images/mask4.jpg">
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="slides">
+               <div class="row">
+                  <div class="col-lg-4 col-md-6 col-sm-12 order-lg-first order-md-first order-sm-last">
+                     <div class="services-content">
+                        <div class="services-1">
+                           <div class="row">
+                              <div class="col-md-7">
+                                 <div class="services-1-heading">
+                                    <h3>Easy Bookings</h3>
+                                    <div class="line"></div>
+                                 </div>
+                              </div>
+                              <div class="col-md-5">
+                                 <div class="services-1-truckimg">
+                                    <img src="images/service.png">
+                                 </div>
+                              </div>
+                              <div class="col-md-12">
+                                 <div class="services-1-content">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, ipsam. Modi,
+                                       at? Odio dolore, repellat qui excepturi assumenda exercitationem temporibus
+                                       facere nisi quas culpa ducimus, minima minus illo quaerat eos.Officia, ipsam.
+                                       Modi temporibus facere nisi quas culpa ducimus, minima minus illo quaerat eos.
+                                    </p>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-md-6 col-lg-8 order-lg-last order-md-last order-sm-first">
+                     <div class="services-1-img">
+                        <img src="images/mask1.webp">
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="slides">
+               <div class="row">
+                  <div class="col-12 col-lg-4 col-md-6 col-sm-12 order-lg-first order-md-first order-sm-last">
+                     <div class="services-content">
+                        <div class="services-1">
+                           <div class="row">
+                              <div class="col-md-8">
+                                 <div class="services-1-heading">
+                                    <h3>24/7 Customer care</h3>
+                                    <div class="line"></div>
+                                 </div>
+                              </div>
+                              <div class="col-md-4 ">
+                                 <div class="services-1-truckimg">
+                                    <img src="images/service.png">
+                                 </div>
+                              </div>
+                              <div class="col-md-12">
+                                 <div class="services-1-content">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, ipsam. Modi,
+                                       at? Odio dolore, repellat qui excepturi assumenda exercitationem temporibus
+                                       facere nisi quas culpa ducimus, minima minus illo quaerat eos.Officia, ipsam.
+                                       Modi temporibus facere nisi quas culpa ducimus, minima minus illo quaerat eos.
+                                    </p>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-12 col-sm-12 col-md-6 col-lg-8 order-lg-last order-md-last order-sm-first">
+                     <div class="services-1-img">
+                        <img src="images/mask3.png">
+                     </div>
+                  </div>
+               </div>
+
+            </div>
+         </div>
+      </div>
+      </div>
+      </div>
+      </div>
+
+   </section>
+   <section class="testimonial">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-12 col-lg-12 ">
+               <div class="testimonial-heading">
+                  <h1>Testimonials</h1>
+               </div>
+            </div>
+         </div>
+         <div class="owl-carousel">
+            <div class="slides">
+               <div class="row">
+                  <div class=" col-lg-5 col-md-6 col-sm-12">
+                     <div class="testimonials-imgs" style="position: relative;">
+                        <img src="images/testimonial.png">
+                     </div>
+                  </div>
+                  <div class=" col-12 col-lg-7 col-md-6 col-sm-12">
+                     <div class="testimonial-content">
+                        <h2>Kathriane Langford</h2>
+                        <div class="line"></div>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil reiciendis enim corrupti
+                           quibusdam, laborum necessitatibus, harum corporis est expedita modi excepturi impedit
+                           aspernatur officiis illo pariatur iusto aliquam culpa! Ex. harum corporis est expedita modi
+                           excepturi impedit aspernatur officiis illo pariatur iusto aliquam </p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="slides">
+               <div class="row">
+                  <div class="col-lg-5 col-md-6 col-sm-12">
+                     <div class="testimonials-imgs" style="position: relative;">
+                        <img src="images/testimonial.png">
+                     </div>
+                  </div>
+                  <div class="col-lg-7 col-md-6 col-sm-12">
+                     <div class="testimonial-content">
+                        <h2>Kathriane Langford</h2>
+                        <div class="line"></div>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil reiciendis enim corrupti
+                           quibusdam, laborum necessitatibus, harum corporis est expedita modi excepturi impedit
+                           aspernatur officiis illo pariatur iusto aliquam culpa! Ex. harum corporisest expedita modi
+                           excepturi impedit aspernatur officiis illo pariatur iusto aliquam </p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="slides">
+               <div class="row">
+                  <div class="col-lg-5 col-md-6 col-sm-12">
+                     <div class="testimonials-imgs" style="position: relative;">
+                        <img src="images/testimonial.png">
+                     </div>
+                  </div>
+                  <div class="col-lg-7 col-md-6 col-sm-12">
+                     <div class="testimonial-content">
+                        <h2>Kathriane Langford</h2>
+                        <div class="line"></div>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil reiciendis enim corrupti
+                           quibusdam, laborum necessitatibus, harum corporis est expedita modi excepturi impedit
+                           aspernatur officiis illo pariatur iusto aliquam culpa! Ex. harum corporis est expedita modi
+                           excepturi impedit aspernatur officiis illo pariatur iusto aliquam </p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="slides">
+               <div class="row">
+                  <div class="col-lg-5 col-md-12 col-sm-12">
+                     <div class="testimonials-imgs" style="position: relative;">
+                        <img src="images/testimonial.png">
+                     </div>
+                  </div>
+                  <div class="col-lg-7 col-md-12 col-sm-12">
+                     <div class="testimonial-content">
+                        <h2>Kathriane Langford</h2>
+                        <div class="line"></div>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil reiciendis enim corrupti
+                           quibusdam, laborum necessitatibus, harum corporis est expedita modi excepturi impedit
+                           aspernatur officiis illo pariatur iusto aliquam culpa! Ex. harum corporis est expedita modi
+                           excepturi impedit aspernatur officiis illo pariatur iusto aliquam </p>
+                     </div>
+
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <div class="testimonial-dots">
+            <div class="dots-line"></div>
+         </div>
+         <!-- <div id="counter"></div> -->
+      </div>
+
+      <!-- <div class="row">
+            <div class="col-md-5">
+               <div class="testimonials-imgs" style="position: relative;">
+                  <img src="images/testimonial.png">
+               </div>
+            </div>
+            <div class="col-md-7">
+               <div class="testimonial-content">
+                  <h2>Kathriane Langford</h2>
+                  <div class="line"></div>
+                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil reiciendis enim corrupti quibusdam, laborum necessitatibus, harum corporis est expedita modi excepturi impedit aspernatur officiis illo pariatur iusto aliquam culpa! Ex. harum corporis est expedita modi excepturi impedit aspernatur officiis illo pariatur iusto aliquam </p>
+               </div>
+            </div>
+         </div> -->
+      </div>
+      </div>
+   </section>
+   <footer>
+      <div class="container">
+         <div class="row">
+            <div class="col-md-12">
+               <div class="footer_logo">
+                  <img src="images/footer_logo_back.png">
+                  <div class="footer_logo_img" style="position: absolute; ">
+                     <img src="images/footer_logo.png">
+                  </div>
+               </div>
+            </div>
+            <div class="col-md-12">
+               <div class="footer-menu">
+                  <!-- <div class="row ">
+                     <div class="col-3">
+                        <div class="footer-link">
+                           <a href="contact.html">Contact</a>
+                        </div>
+                     </div>
+                     <div class="col-3">
+                        <div class="footer-link">
+                           <a href="booking_history.html">Booking history</a>
+                        </div>
+                     </div>
+                     <div class="col-3">
+                        <div class="footer-link">
+                           <a href="about-us.html">About us</a>
+                        </div>
+                     </div>
+                  </div> -->
+                  <ul>
+                     <li><a href="contact.html" title="Contact">Contact</a></li>
+                     <li><a href="booking_history.html" title="Booking history">Booking history</a></li>
+                     <li><a href="about-us.html" title="About us">About us</a></li>
+                     <!-- <li><a href="#" title="letter-spacing">letter-spacing</a></li>
+                     <li><a href="#" title="line-height">line-height</a></li> -->
+                  </ul>
+                  <!-- <ul>
+                     <li><a href="contact.html" title="Contact">Contact</a></li>
+                     <li><a href="booking_history.html" tite="Booking history">Booking history</a></li>
+                     <li><a href="about-us.html" title="About us">About us</a></li>
+                  </ul> -->
+               </div>
+            </div>
+            <div class="col-md-12">
+               <div class="social-icon">
+                  <div class="social-icon-background">
+                     <div class="facebook">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                     </div>
+                  </div>
+                  <div class="social-icon-background">
+                     <div class="twitter">
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                     </div>
+                  </div>
+                  <div class="social-icon-background">
+                     <div class="instagram">
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                     </div>
+                  </div>
+                  <div class="social-icon-background">
+                     <div class="google-plus">
+                        <a href="#"><i class="fa-brands fa-google-plus-g"></i></a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-md-12">
+               <div class="copyright">
+                  <p>&#169; Hyvikk Solutions 2019.All Rights Reserved.</p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </footer>
+
+   <!--Add Scripts-->
+   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/fontawesome.min.js" integrity="sha512-64O4TSvYybbO2u06YzKDmZfLj/Tcr9+oorWhxzE3yDnmBRf7wvDgQweCzUf5pm2xYTgHMMyk5tW8kWU92JENng==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"></script>
+
+   <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+   <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+   <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script> -->
+   <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/js/bootstrap-datepicker.min.js"></script>
+   <script src="owl.carousel.js"></script>
+   <script src="owl.carousel.min.js"></script>
+
+   <!-- <script>
+      var dateFormat = function () {
+         var token = /d{1,4}|m{1,4}|yy(?:yy)?|([HhMsTt])\1?|[LloSZ]|"[^"]*"|'[^']*'/g,
+            timezone = /\b(?:[PMCEA][SDP]T|(?:Pacific|Mountain|Central|Eastern|Atlantic) (?:Standard|Daylight|Prevailing) Time|(?:GMT|UTC)(?:[-+]\d{4})?)\b/g,
+            timezoneClip = /[^-+\dA-Z]/g,
+            pad = function (val, len) {
+               val = String(val);
+               len = len || 2;
+               while (val.length < len) val = "0" + val;
+               return val;
+            };
+
+         // Regexes and supporting functions are cached through closure
+         return function (date, mask, utc) {
+            var dF = dateFormat;
+
+            // You can't provide utc if you skip other args (use the "UTC:" mask prefix)
+            if (arguments.length == 1 && Object.prototype.toString.call(date) == "[object String]" && !/\d/.test(date)) {
+               mask = date;
+               date = undefined;
+            }
+
+            // Passing date through Date applies Date.parse, if necessary
+            date = date ? new Date(date) : new Date;
+            if (isNaN(date)) throw SyntaxError("invalid date");
+
+            mask = String(dF.masks[mask] || mask || dF.masks["default"]);
+
+            // Allow setting the utc argument via the mask
+            if (mask.slice(0, 4) == "UTC:") {
+               mask = mask.slice(4);
+               utc = true;
+            }
+
+            var _ = utc ? "getUTC" : "get",
+               d = date[_ + "Date"](),
+               D = date[_ + "Day"](),
+               m = date[_ + "Month"](),
+               y = date[_ + "FullYear"](),
+               H = date[_ + "Hours"](),
+               M = date[_ + "Minutes"](),
+               s = date[_ + "Seconds"](),
+               L = date[_ + "Milliseconds"](),
+               o = utc ? 0 : date.getTimezoneOffset(),
+               flags = {
+                  d: d,
+                  dd: pad(d),
+                  ddd: dF.i18n.dayNames[D],
+                  dddd: dF.i18n.dayNames[D + 7],
+                  m: m + 1,
+                  mm: pad(m + 1),
+                  mmm: dF.i18n.monthNames[m],
+                  mmmm: dF.i18n.monthNames[m + 12],
+                  yy: String(y).slice(2),
+                  yyyy: y,
+                  h: H % 12 || 12,
+                  hh: pad(H % 12 || 12),
+                  H: H,
+                  HH: pad(H),
+                  M: M,
+                  MM: pad(M),
+                  s: s,
+                  ss: pad(s),
+                  l: pad(L, 3),
+                  L: pad(L > 99 ? Math.round(L / 10) : L),
+                  t: H < 12 ? "a" : "p",
+                  tt: H < 12 ? "am" : "pm",
+                  T: H < 12 ? "A" : "P",
+                  TT: H < 12 ? "AM" : "PM",
+                  Z: utc ? "UTC" : (String(date).match(timezone) || [""]).pop().replace(timezoneClip, ""),
+                  o: (o > 0 ? "-" : "+") + pad(Math.floor(Math.abs(o) / 60) * 100 + Math.abs(o) % 60, 4),
+                  S: ["th", "st", "nd", "rd"][d % 10 > 3 ? 0 : (d % 100 - d % 10 != 10) * d % 10]
+               };
+
+            return mask.replace(token, function ($0) {
+               return $0 in flags ? flags[$0] : $0.slice(1, $0.length - 1);
+            });
+         };
+      }();
+
+      // Some common format strings
+      dateFormat.masks = {
+         "default": "ddd mmm dd yyyy HH:MM:ss",
+         shortDate: "m/d/yy",
+         mediumDate: "mmm d, yyyy",
+         longDate: "mmmm d, yyyy",
+         fullDate: "dddd, mmmm d, yyyy",
+         shortTime: "h:MM TT",
+         mediumTime: "h:MM:ss TT",
+         longTime: "h:MM:ss TT Z",
+         isoDate: "yyyy-mm-dd",
+         isoTime: "HH:MM:ss",
+         isoDateTime: "yyyy-mm-dd'T'HH:MM:ss",
+         isoUtcDateTime: "UTC:yyyy-mm-dd'T'HH:MM:ss'Z'"
+      };
+
+      // Internationalization strings
+      dateFormat.i18n = {
+         dayNames: [
+            "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat",
+            "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
+         ],
+         monthNames: [
+            "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
+
+         ]
+      };
+
+      // For convenience...
+      Date.prototype.format = function (mask, utc) {
+         return dateFormat(this, mask, utc);
+      };
+
+      var current_data_time = new Date();
+      var today = dateFormat(new Date(), "dddd, mmmm d, yyyy");
+
+      //       $('#datepicker').val(today);
+      //    $('input[id$=datepicker]').datepicker({
+    	// 	dateFormat: 'd M'			// shows d M, y format.
+		// });
+
+   </script> -->
+   <script>
+      $(document).ready(function () {
+         $('#datepicker').datepicker({
+            format: "dd M yyyy",
+            todayBtn: "linked",
+            clearBtn: true,
+            autoclose: true,
+            startDate: new Date(),
+            endDate: new Date(new Date().getFullYear() + 1, 11, 31)
+         });
+         $('#datepicker').datepicker('setDate', new Date());
+
+         const inputElement = $('.number-input-container input');
+         const incrementButton = $('.increment-icon');
+         const decrementButton = $('.decrement-icon');
+
+         // Add a click event listener to the increment button
+         incrementButton.click(function () {
+            inputElement.val(parseInt(inputElement.val()) + 1);
+         });
+
+         // Add a click event listener to the decrement button
+         decrementButton.click(function () {
+            if (parseInt(inputElement.val()) > 0) {
+               inputElement.val(parseInt(inputElement.val()) - 1);
+            }
+         });
+
+      });
+
+      // $(document).ready(function () {
+      //    $("#datepicker").datepicker({
+
+      //       format: "dd-mm",
+      //       startView: "dates",
+      //       minViewMode: "dates"
+      //    });
+      //    // $('#datepicker').datepicker().datepicker('setDate', 'today');
+      //    $('#datepicker').datepicker({ dateFormat: 'dd/mm' });
+      //    $('#datepicker').datepicker('setDate', new Date());
+
+      // });
+      // $(document).ready(function() {
+      //     $('#txtDate').datepicker({ dateFormat: 'yy/mm/dd' });
+      //     $('#txtDate').datepicker('setDate', new Date());
+      // });
+
+   </script>
+   <!-- <script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+   showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+   showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+   let i;
+   let slides = document.getElementsByClassName("mySlides");
+     let dots = document.getElementsByClassName("dot");
+   if (n > slides.length) { slideIndex = 1 }
+   if (n < 1) { slideIndex = slides.length }
+   for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+   }
+   for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+   }
+   slides[slideIndex - 1].style.display = "block";
+   dots[slideIndex - 1].className += " active";
+}
+
+</script> -->
+   <script>
+      $(function () {
+
+         var owl = $('.slideshow .owl-carousel');
+         owl.owlCarousel({
+            autoplay: false,
+            items: 1,
+            loop: true,
+            nav: false,
+            freeDrag: true,
+            mouseDrag: true,
+            autoplayHoverPause: true,
+            // animateOut: true,
+            // animateIn:true,
+            onInitialized: counter, //When the plugin has initialized.
+            onTranslated: counter //When the translation of the stage has finished.
+         });
+
+         $('.our-services .owl-dot').on('click', function () {
+            var totalItems = 0;
+            //   owl.trigger('to.owl.carousel', [$(this).index(), 300]);
+            //   currentIndex = $('.owl-dot.active').index() + 1;
+            $('#counter').html("0" + currentIndex + "")
+            //   $( '.owl-dot' ).removeClass( 'active' );
+            //   $(this).addClass( 'active' );
+
+         });
+         $('.slideshow .owl-carousel').bind('slid', function () {
+            currentIndex = $('.slideshow owl-dot.active').index() + 1;
+            // $('.num').html(''+currentIndex+'/'+totalItems+'');
+            //console.log(totalItems,currentIndex);
+         });
+         function counter(event) {
+
+            var items = event.item.count;     // Number of items
+            // Position of the current item
+            currentIndex = $('.slideshow .owl-dot.active').index() + 1;
+
+            $('#counter').html("0" + currentIndex + " ")
+         }
+
+      });
+
+   </script>
+   <script>
+      $(function () {
+
+         var owl = $('.our-services .owl-carousel');
+         owl.owlCarousel({
+            animateOut: 'fadeOut',
+            autoplay: 1000,
+            items: 1,
+            loop: true,
+            nav: false,
+            autoplayHoverPause: false,
+            onInitialized: counter, //When the plugin has initialized.
+            onTranslated: counter //When the translation of the stage has finished.
+         });
+
+         $('.our-services .owl-dot').on('click', function () {
+            var totalItems = 0;
+            //   owl.trigger('to.owl.carousel', [$(this).index(), 300]);
+            //   currentIndex = $('.owl-dot.active').index() + 1;
+            $('#counter1').html("0" + currentIndex + "")
+            //   $( '.owl-dot' ).removeClass( 'active' );
+            //   $(this).addClass( 'active' );
+
+         });
+         $('.our-services .owl-carousel').bind('slid', function () {
+            currentIndex = $('.our-services  owl-dot.active').index() + 1;
+            // $('.num').html(''+currentIndex+'/'+totalItems+'');
+            //console.log(totalItems,currentIndex);
+         });
+         function counter(event) {
+
+            var items = event.item.count;     // Number of items
+            // Position of the current item
+            currentIndex = $('.our-services  .owl-dot.active').index() + 1;
+
+            $('#counter1').html("0" + currentIndex + " ")
+         }
+
+      });
+   </script>
+
+   <script>
+
+      $(function () {
+         var owl = $('.testimonial .owl-carousel');
+         owl.owlCarousel({
+            autoplay: false,
+            items: 1,
+            loop: false,
+            nav: false,
+
+            autoplayHoverPause: true,
+
+
+            onInitialized: counter, //When the plugin has initialized.
+            onTranslated: counter //When the translation of the stage has finished.
+         });
+
+         $('.testimonial .owl-dot').on('click', function () {
+            var totalItems = 0;
+            //   owl.trigger('to.owl.carousel', [$(this).index(), 300]);
+            //   currentIndex = $('.owl-dot.active').index() + 1;
+            $('#counter1').html("0" + currentIndex + "")
+            //   $( '.owl-dot' ).removeClass( 'active' );
+            //   $(this).addClass( 'active' );
+
+         });
+         $('.testimonial .owl-carousel').bind('slid', function () {
+            currentIndex = $('.testimonial  owl-dot.active').index() + 1;
+            // $('.num').html(''+currentIndex+'/'+totalItems+'');
+            //console.log(totalItems,currentIndex);
+         });
+         function counter(event) {
+
+            var items = event.item.count;     // Number of items
+            // Position of the current item
+            currentIndex = $('.testimonial  .owl-dot.active').index() + 1;
+
+            $('#counter1').html("0" + currentIndex + " ")
+         }
+
+      });
+   </script>
+   <script>
+      $(document).ready(function () {
+         $(".hero-slider .owl-carousel").owlCarousel({
+            items: 1,
+            loop: true,
+            autoplay: true,
+            singleItem: true,
+
+         });
+         $("input").focusout(function () {
+            if ($(this).val() != "") {
+               $(this).addClass("has-content");
+            } else {
+               $(this).removeClass("has-content");
+            }
+         });
+      });
+   </script>
+   <script>
+      $('.btn-now').on('click', '.now', function () {
+         $(this).addClass('active').siblings().removeClass('active');
+      });
+      function mouseover() {
+         document.getElementById("img1").style.display = "none";
+         document.getElementById("img2").style.display = "block";
+      }
+
+      function mouseout() {
+         document.getElementById("img1").style.display = "block";
+         document.getElementById("img2").style.display = "none";
+      }
+   </script>
+   <script>
+      $(document).ready(function () {
+         $(".book-now").click(function () {
+            $(".date-time").css("display", "none", " transition", "all .3s ease");
+         });
+         $(".book-later").click(function () {
+            $(".date-time").css("display", "block");
+         });
+         var readURL = function (input) {
+            if (input.files && input.files[0]) {
+               var reader = new FileReader();
+
+               reader.onload = function (e) {
+                  $('.profile-pic').attr('src', e.target.result);
+               }
+
+               reader.readAsDataURL(input.files[0]);
+            }
+         }
+         $(".file-upload").on('change', function () {
+            readURL(this);
+         });
+         $(".upload-button").on('click', function () {
+            $(".file-upload").click();
+         });
+      });
+   </script>
+
+</body>
+
+</html>

@@ -1,0 +1,903 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <title>Fleet Manager</title>
+   <link rel="icon" type="image/x-icon" href="images/fleet_favicon.png">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+   <!-- <link rel="stylesheet" type="text/css"
+         href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+         />
+      <link rel="stylesheet" type="text/css"
+         href="http://kenwheeler.github.io/slick/slick/slick-theme.css" /> -->
+   <!-- <link
+         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/css/datepicker.min.css"
+         rel="stylesheet"> -->
+
+   <link href="font/stylesheet.css" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+   <!-- custom css -->
+   <link href="css/style.css" rel="stylesheet">
+
+   <style>
+      .footer-menu {
+         width: 100%;
+      }
+
+      .footer-link {
+         display: flex;
+         justify-content: center;
+      }
+
+      .contact-hero-section {
+         width: 100%;
+         display: flex;
+         position: relative;
+      }
+
+      .contact-hero-section-round {
+         width: 100%;
+         height: auto;
+      }
+
+      .contact-hero-section-round-fleet {
+         width: 100%;
+         height: auto;
+         position: relative;
+         top: -234px;
+         right: -135px;
+      }
+
+      .contact-hero-section-round img {
+         width: auto;
+         max-height: 100%;
+         position: relative;
+         left: -280px;
+      }
+
+      .contact-hero-section-content {
+         width: 100%;
+         position: absolute;
+      }
+
+      .contact-hero-section-round-fleet img {
+         width: 55%;
+         height: auto;
+         float: right;
+      }
+
+      .contact-hero-img img {
+         width: auto;
+         max-height: 450px;
+         position: absolute;
+         top: 25px;
+         right: 0px;
+         right: -35px;
+      }
+
+      .contact-section {
+         width: 100%;
+         height: auto;
+      }
+
+      .contact-section .display-4 {
+         font-family: 'antipasto pro';
+         font-weight: 600;
+         margin-top: 130px;
+         margin-left: 8px;
+         font-size: 3.8rem;
+         line-height: 1.3;
+         color: #130F41;
+      }
+
+      @media only screen and (max-width:1200px) {
+         .contact-hero-img img {
+            height: 350px;
+         }
+      }
+
+      @media only screen and (max-width:1070px) {
+         .contact-hero-img img {
+            width: 480px;
+         }
+      }
+
+      @media only screen and (max-width:992px) {
+         .contact-hero-section-round-fleet {
+            width: 80%;
+            top: -180px;
+         }
+
+         .contact-hero-section-round-fleet img {
+            width: 75%;
+         }
+
+         .about-hero-img img {}
+
+         .contact-hero-img img {
+            top: 144px;
+            width: 60%;
+            height: auto;
+            right: 0;
+
+         }
+
+         .contact-hero-section-round-fleet {
+
+            display: flex;
+            justify-content: end;
+         }
+      }
+
+      /* @media only screen and (max-width:767px){
+            .contact-hero-section-round-fleet{
+               justify-content: unset;
+            }
+            .contact-hero-section-round-fleet{
+               top:-100px;
+               right: -265px;
+            }
+            .contact-section .display-4{
+               font-size: 3rem;
+            }
+         } */
+      @media only screen and (max-width:767px) {
+         .contact-hero-section-round img {
+            width: 66%;
+            left: -237px;
+         }
+
+         .contact-hero-section-round-fleet {
+            justify-content: unset;
+            top: -100px;
+            right: -265px;
+         }
+
+         .contact-section .display-4 {
+            margin-top: 100px;
+            font-size: 3rem;
+         }
+
+         .contact-hero-img img {
+            top: 133px;
+         }
+
+      }
+
+      @media only screen and (max-width:575px) {
+         .contact-hero-section-round img {
+            width: 66%;
+            left: -237px;
+         }
+
+         .contact-section .display-4 {
+            margin-top: 90px;
+            margin-left: 20px;
+         }
+
+         .contact-hero-section-round-fleet {
+            top: -26px;
+            right: -207px;
+         }
+      }
+
+      /*    @media only screen and (min-width:360px) and (max-width:479px){
+           .about-hero-section-round img{
+               width: 66%;
+               left: -237px;
+            }
+            .about-hero-section-round-fleet{
+               top:-70px;
+            }
+         } */
+
+      @media only screen and (max-width:480px) {
+         .contact-hero-section-round-fleet {
+            top: -35px;
+            right: -160px;
+         }
+
+         .contact-hero-section-round img {
+            width: 66% !important;
+            left: -173px !important;
+         }
+
+         .contact-section .display-4 {
+            margin-left: 30px;
+            margin-top: 88px;
+            font-size: 2rem;
+         }
+
+         .contact-hero-img img {
+            top: 85px;
+         }
+      }
+
+      @media only screen and (max-width:450px) {
+         .contact-hero-section-round-fleet {
+            right: -75px;
+         }
+
+         .contact-hero-section-round-fleet img {
+            width: 100%;
+         }
+      }
+
+      @media only screen and (max-width:360px) {
+         .main-section-background {
+            background-size: 19% 400px;
+            height: 400px;
+         }
+
+         .contact-hero-section-round-fleet {
+            top: 0px !important;
+            right: -130pxs;
+         }
+
+         .contact-hero-section-round img {
+            width: 66% !important;
+            left: -135px !important;
+         }
+
+         .contact-section .display-4 {
+            margin-left: 13px;
+            margin-top: 67px;
+            font-size: 1.6rem;
+         }
+
+         .contact-hero-img img {
+            top: 110px;
+            right: -25px;
+         }
+      }
+
+      .close.btn-check:focus+.close.btn,
+      .close.btn:focus {
+         border-color: #fff !important;
+      }
+
+      .close.btn-check:active+.btn,
+      .close.btn-check:checked+.btn,
+      .close.btn.active,
+      .close.btn.show,
+      .close.btn:active {
+         border-color: #fff !important;
+      }
+   </style>
+</head>
+
+<body>
+   <div class="main-section-background">
+      <div class="header">
+         <nav class="navbar  navbar-expand-lg navbar-wrapper">
+            <div class="container-fluid">
+               <div class="main-menubar about-us-menubar">
+                  <a class="navbar-brand" href="index.html"><img src="images/logo_dark.png"></a>
+                  <button class="navbar-toggler  collapsed" type="button" data-bs-toggle="collapse"
+                     data-bs-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false"
+                     aria-label="Toggle navigation">
+                     <span class="my-1 mx-2 close"><i class="fa fa-xmark"></i></span>
+                     <span class="custom-toggler navbar-toggler-icon"></span>
+                  </button>
+
+                  <div class="collapse navbar-collapse " id="navbarsExample09">
+                     <ul class="navbar-nav  me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                           <a class="nav-link " aria-current="page" href="index.html ">Home</a>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link active" href="contact.html">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link" href="booking_history.html">Booking history</a>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link" href="about-us.html">About us</a>
+                        </li>
+                        <li class="nav-item logout-btn-res d-lg-none">
+                           <!-- <a class="nav-link" href="#">About us</a> -->
+                           <button class="btn header-logout-btn d-md-flex d-lg-none"><a href="index2.html">Logout</a></button>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="dropdown text-end d-lg-none d-md-block d-sm-block">
+                  <a href="#" class="d-block link-dark-none
+                              text-decoration-none" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false"
+                     data-bs-toggle="modal" data-bs-target="#exampleModal">
+                     <div class="img-back-shadow ">
+                        <img src="images/testimonial.png" alt="mdo" class="rounded-circle">
+                     </div>
+                  </a>
+               </div>
+               <div class="dropdown text-end ">
+                  <a href="#" class="d-block link-dark-none  text-decoration-none" data-bs-toggle="modal"
+                     data-bs-target="#profile-detail">
+                     <div class="img-back-shadow1">
+                        <img src="images/testimonial.png" alt="mdo" class="rounded-circle1">
+                     </div>
+                  </a>
+
+                  <div class="profile-detail-modal">
+                     <div class="modal fade" id="profile-detail" tabindex="-1" aria-labelledby="profile-detail"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-md">
+                           <div class="modal-content">
+                              <div class="modal-header ">
+                                 <div class="edit-profile">
+                                    <a href="#" data-bs-toggle="modal" data-bs-target="#edit_profile">Edit Profile</a>
+                                 </div>
+                                 <button type="button" class="close btn d-lg-none d-md-none d-sm-flex"
+                                    data-bs-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                 </button>
+                              </div>
+                              <div class="modal-body">
+                                 <div class="container">
+                                    <div class="row profile-sec">
+                                       <div class="col-lg-6 col-md-6 col-12 justify-content-sm-center">
+                                          <div class="profile-img">
+                                             <img src="images/l3.png" alt="">
+                                             <div class="profile-img-on-name ">
+                                                <p style="font-weight: bold;letter-spacing: .8px;">Kathriane Langford
+                                                </p>
+                                                <p style="font-weight: lighter;">Female</p>
+                                             </div>
+                                          </div>
+                                          <div class="profile-img-bottom-name ">
+                                             <p style="font-weight: bold;letter-spacing: .8px;">Kathriane Langford</p>
+                                             <p style="font-weight: lighter;">Female</p>
+                                          </div>
+                                       </div>
+                                       <div class="col-lg-6 col-md-6 col-12">
+                                          <div class="profile-phone-email">
+                                             <div class="row">
+                                                <div class="col-12 ">
+                                                   <div class="profile-phone">
+                                                      <p>Phone</p>
+                                                   </div>
+                                                </div>
+                                                <div class="col-12 ">
+                                                   <div class="profile-phone-nu">
+                                                      <p>+91 9153456788</p>
+                                                   </div>
+                                                </div>
+                                                <div class="col-12 ">
+                                                   <div class="profile-phone">
+                                                      <p>Email</p>
+                                                   </div>
+                                                </div>
+                                                <div class="col-12 ">
+                                                   <div class="profile-phone-nu">
+                                                      <p>enquiry@hyvikk.com</p>
+                                                   </div>
+                                                </div>
+                                                <div class="col-12">
+                                                   <div class="profile-logout">
+                                                      <a href="index2.html" class="btn">Logout</a>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="edit-profile-modal">
+                     <div class="modal fade" id="edit_profile" tabindex="-1" aria-labelledby="edit_profile"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-md">
+
+                           <div class="modal-content">
+                              <div class="modal-header d-lg-none d-md-none d-sm-flex d-flex"
+                                 style="padding: 0rem 1.5rem;">
+                                 <div class="edit-title  mt-0">
+                                    <h3>Edit Profile</h3>
+                                    <div class="line"></div>
+                                 </div>
+                                 <button type="button" class="close btn" data-bs-dismiss="modal" aria-label="close">
+                                    <span aria-hidden="true">×</span>
+                                 </button>
+                              </div>
+                              <!-- <div class="modal-header d-lg-none d-md-none d-sm-flex d-none">
+                                       <button type="button" class="close btn" data-bs-dismiss="modal" aria-label="Close">
+                                         <span aria-hidden="true">&times;</span>
+                                       </button>
+                                     </div> -->
+                              <div class="modal-body">
+                                 <div class="container-fluid">
+                                    <div class="row">
+                                       <div
+                                          class="col-md-8 col-sm-12 ps-0  pe-0 order-last order-sm-last order-md-first oder-lg-first ">
+                                          <div class="edit-profile-popup">
+                                             <div class="container">
+                                                <div class="row">
+                                                   <div class="col-12 p-0">
+                                                      <div class="edit-profile-title ">
+                                                         <div class="edit-title d-none d-sm-none d-md-block d-xl-block">
+                                                            <h3>Edit Profile</h3>
+                                                            <div class="line"></div>
+                                                         </div>
+                                                         <div class="edit-profile-form">
+                                                            <div class="row">
+                                                               <div class="col-12">
+                                                                  <form class="row mt-4">
+                                                                     <div class="col-md-12  gender-btn-edit-profile">
+                                                                        <div class="row ">
+                                                                           <div class="col-4">
+                                                                              <label
+                                                                                 class="form-label gender-label">Gender</label>
+                                                                           </div>
+                                                                           <!-- <div class="col-4">
+                                                                                 <button class="btn" href="#">Male</button>
+                                                                               </div>
+                                                                               <div class="col-4 .e-btn-group">
+                                                                                  <button class="btn">Female</button> 
+                                                                                 <input type="radio" id="radioleft" name="align" value="left" />
+                                                                                 <label class="e-btn" for="radioleft">Left</label>
+                                                                               </div> -->
+                                                                           <div class="col-8 p-0">
+                                                                              <ul class="edit-gender-btn">
+                                                                                 <li>
+                                                                                    <input type="radio" id="a25"
+                                                                                       name="amount"
+                                                                                       style="cursor:pointer" />
+                                                                                    <label for="a25">Male</label>
+                                                                                 </li>
+                                                                                 <li>
+                                                                                    <input type="radio" id="a50"
+                                                                                       name="amount"
+                                                                                       style="cursor:pointer" />
+                                                                                    <label for="a50">Female</label>
+                                                                                 </li>
+                                                                              </ul>
+                                                                           </div>
+                                                                        </div>
+                                                                     </div>
+                                                                     <div class="col-12  input-effect edit-form">
+                                                                        <input class="effect-22 form-control"
+                                                                           type="text" placeholder="">
+                                                                        <label class="form-label"
+                                                                           style="position:absolute;">Name</label>
+                                                                        <span class="focus-bg"></span>
+                                                                     </div>
+                                                                     <div class="col-12  input-effect edit-form">
+                                                                        <input class="effect-22 form-control"
+                                                                           type="text" placeholder="">
+                                                                        <label class="form-label"
+                                                                           style="position:absolute;">Mobile</label>
+                                                                        <span class="focus-bg"></span>
+                                                                     </div>
+                                                                     <div class="col-12 input-effect edit-form">
+                                                                        <input class="effect-22 form-control"
+                                                                           type="email" placeholder="">
+                                                                        <label class="form-label"
+                                                                           style="position:absolute;">Email</label>
+                                                                        <span class="focus-bg"></span>
+                                                                     </div>
+                                                                     <div class="col-12 edit-profile-confirm-btn">
+                                                                        <a href="index.html"><button class="btn"
+                                                                              type="button">Confirm</button></a>
+                                                                     </div>
+                                                                  </form>
+                                                               </div>
+                                                            </div>
+                                                         </div>
+                                                      </div>
+                                                      <div class="col-12">
+                                                         <div
+                                                            class="reset-password-link mt-3 mb-4 mb-sm-4  mb-md-0 mb-lg-0 mb-xl-0">
+                                                            <a href="#" data-bs-toggle="modal"
+                                                               data-bs-target="#reset_password">Reset Password</a>
+                                                         </div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+
+                                       </div>
+                                       <div class="col-md-4 col-sm-12 ps-0 pe-0  order-sm-first order-lg-last">
+                                          <div class="edit-title d-lg-none d-md-none d-sm-none d-none ps-sm-5 ps-5">
+                                             <h3>Edit Profile</h3>
+                                             <div class="line"></div>
+                                          </div>
+                                          <div class="edit-profile-img">
+                                             <div class="profile-round-img">
+                                                <div class="p-r-img ">
+                                                   <img class="user-profile" src="images/l6.png">
+                                                   <div class="p-r-img-overlay">
+                                                      <a href="#" class="upload-button">Edit Profile</a>
+                                                      <input class="file-upload" type="file" accept="image/*">
+                                                   </div>
+                                                </div>
+                                                <!-- <div class="circle d-sm-flex d-md-none d-lg-none">
+                                                         <img class="profile-pic" src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg">
+                                                  
+                                                       </div>
+                                                       <div class="p-image d-sm-flex d-md-none d-lg-none">
+                                                         <i class="fa fa-camera upload-button"></i> 
+                                                         <a href="#" class="upload-button">edit profile</a>
+                                                          <input class="file-upload" type="file" accept="image/*"/>
+                                                       </div> -->
+
+                                             </div>
+                                             <div class="profile-bottom-round-img">
+                                                <div class="round-profile">
+                                                   <img src="images/profile-round.png" alt="">
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="reset-password background-container">
+                     <div class="modal fade" id="reset_password" tabindex="-1" aria-labelledby="reset_password"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-md">
+                           <div class="modal-content">
+                              <div class="modal-header d-lg-none d-md-none d-sm-flex d-flex"
+                                 style="padding: 0rem 1.5rem;">
+                                 <div class="reset-title  mt-0">
+                                    <h3>Reset Password</h3>
+                                    <div class="line"></div>
+                                 </div>
+                                 <button type="button" class="close btn" data-bs-dismiss="modal" aria-label="close">
+                                    <span aria-hidden="true">×</span>
+                                 </button>
+                              </div>
+                              <div class="modal-body">
+                                 <div class="container">
+                                    <div class="row">
+                                       <div
+                                          class="col-md-8 col-sm-12 ps-0 pe-0 order-last order-sm-last order-md-first oder-lg-first">
+                                          <div class="resetpass-profile-popup">
+                                             <div class="container">
+                                                <div class="row">
+                                                   <div class="col-12">
+                                                      <div class="resetpass-profile-title">
+                                                         <div
+                                                            class="reset-title d-lg-block d-md-block d-sm-none d-none">
+                                                            <h3>Reset Password</h3>
+                                                            <div class="line"></div>
+                                                         </div>
+                                                         <div class="reset-pass-form">
+                                                            <div class="row">
+                                                               <div class="col-12">
+                                                                  <form class="row mt-4">
+                                                                     <div class="col-12  input-effect reset-form">
+                                                                        <input class="effect-22 form-control"
+                                                                           type="text" placeholder="">
+                                                                        <label class="form-label"
+                                                                           style="position:absolute;">Enter current
+                                                                           password</label>
+                                                                        <span class="focus-bg"></span>
+                                                                     </div>
+                                                                     <div class="col-12">
+                                                                        <div class="enter-pass-line">
+
+                                                                        </div>
+                                                                     </div>
+                                                                     <div class="col-12  input-effect reset-form"
+                                                                        style="margin-top:10px">
+                                                                        <input class="effect-22 form-control"
+                                                                           type="text" placeholder="">
+                                                                        <label class="form-label"
+                                                                           style="position:absolute;">Enter new
+                                                                           password</label>
+                                                                        <span class="focus-bg"></span>
+                                                                     </div>
+
+                                                                     <div class="col-12 input-effect reset-form">
+                                                                        <input class="effect-22 form-control"
+                                                                           type="email" placeholder="">
+                                                                        <label class="form-label"
+                                                                           style="position:absolute;">Confirm new
+                                                                           password </label>
+                                                                        <span class="focus-bg"></span>
+
+                                                                     </div>
+                                                                     <div class="col-12 reset-update-pass-btn">
+                                                                        <a href="index.html" class="btn">Update
+                                                                           password</a>
+                                                                     </div>
+                                                                  </form>
+                                                               </div>
+                                                            </div>
+                                                         </div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <div class="col-md-4 col-sm-12 ps-0 pe-0  order-sm-first order-lg-last">
+                                          <!-- <div class="reset-title d-lg-none d-md-none d-sm-block d-block ps-sm-5 ps-5">
+                                                 <h3>Reset Password</h3>
+                                                 <div class="line"></div>
+                                              </div>  -->
+                                          <div class="reset-pass-img" style="">
+                                             <div class="reset-round-img">
+                                                <div class="r-r-img">
+                                                   <img src="images/l6.png">
+                                                </div>
+                                             </div>
+                                             <div class="profile-bottom-round-img">
+                                                <div class="round-profile">
+                                                   <img src="images/profile-round.png" alt="">
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </nav>
+
+      </div>
+      <div class="contact-hero-section background-container" style="overflow-x:hidden">
+         <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-6">
+               <div class="contact-hero-section-round">
+                  <img src="images/round2.png" class="img-fluid" alt="round">
+               </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+               <div class="contact-hero-section-round-fleet">
+                  <img src="images/FLEET1.png" class="img-fluid" alt="fleet">
+               </div>
+            </div>
+         </div>
+         <div class="contact-hero-section-content">
+            <div class="container">
+               <div class="row d-flex">
+                  <div class="col-12 col-md-12 col-lg-6 order-md-first">
+                     <div class="contact-section">
+                        <h1 class="display-4">Contact Us</h1>
+                     </div>
+                  </div>
+                  <div class="col-12 col-md-12 col-lg-6 order-md-last">
+                     <div class="contact-hero-img">
+                        <img src="images/phone.png" alt="contact-hero-img">
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <section>
+      <div class="contact-us-bg">
+         <div class="contact-us-round">
+            <img src="images/Subtraction 10.png" alt="">
+         </div>
+         <div class="container">
+            <div class="contact-us-form">
+               <div class="contact-form">
+                  <div class="row">
+                     <div class="col-lg-7 col-md-12 ">
+                        <div class="get-in-touch-sec">
+                           <div class="row">
+                              <div class="col-12">
+                                 <div class="get-in-touch-title">
+                                    <div class="d-flex">
+                                       <h2>Get In Touch</h2>
+                                    </div>
+                                    <div class="line-booking-form">
+                                       <div class="line"><span>Leave us Message</span></div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col-12">
+                                 <form class="row mt-2">
+                                    <div class="col-md-12  input-effect contact-name">
+                                       <input class="effect-22 form-control" type="text" placeholder="">
+                                       <label class="form-label" style="position:absolute;">Name</label>
+                                       <span class="focus-bg"></span>
+                                    </div>
+
+                                    <div class="col-md-12 input-effect contact-name">
+                                       <input class="effect-22 form-control" type="email" placeholder="">
+                                       <label class="form-label" style="position:absolute;">Email</label>
+                                       <span class="focus-bg"></span>
+                                    </div>
+                                    <div class="col-md-12 input-effect contact-name">
+                                       <!-- <input class="effect-22 form-control" type="textarea" row="4" column="4" placeholder="" > -->
+
+                                       <textarea class="effect-22 form-control" name="" id="" cols="30"
+                                          rows="3"></textarea>
+                                       <label class="form-label" style="position:absolute;">Message</label>
+                                       <span class="focus-bg"></span>
+                                    </div>
+                                    <div class="col-12 contact-send">
+                                       <a href="#" class="btn"> Send </a>
+                                    </div>
+                                 </form>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-lg-5 col-md-12  mt-2 mt-sm-2 mt-md-2 mt-lg-0 mt-xl-0">
+                        <div class="p-e-a-sec">
+                           <div class="row">
+                              <div class="col-12">
+                                 <div class="contact-phone">
+                                    <span>Phone</span>
+                                    <p>+91 9123456789</p>
+                                 </div>
+                              </div>
+                              <div class="col-12">
+                                 <div class="email-enquiry">
+                                    <span>E-mail</span>
+                                    <p>enquiry@hyvikk.com</p>
+                                 </div>
+                              </div>
+                              <div class="col-12">
+                                 <div class="address-enquiry">
+                                    <span>Address</span>
+                                    <p>309, Swara Parklane, Atabhai Chowk, Bhavnagar</p>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <footer>
+      <div class="container">
+         <div class="row">
+            <div class="col-md-12">
+               <div class="footer_logo">
+                  <img src="images/footer_logo_back.png">
+                  <div class="footer_logo_img" style="position: absolute; ">
+                     <img src="images/footer_logo.png">
+                  </div>
+               </div>
+            </div>
+            <div class="col-md-12">
+               <div class="footer-menu">
+                  <!-- <div class="row ">
+                  <div class="col-3">
+                     <div class="footer-link">
+                        <a href="contact.html">Contact</a>
+                     </div>
+                  </div>
+                  <div class="col-3">
+                     <div class="footer-link">
+                        <a href="booking_history.html">Booking history</a>
+                     </div>
+                  </div>
+                  <div class="col-3">
+                     <div class="footer-link">
+                        <a href="about-us.html">About us</a>
+                     </div>
+                  </div>
+               </div> -->
+                  <ul>
+                     <li><a href="contact.html" title="Contact">Contact</a></li>
+                     <li><a href="booking_history.html" title="Booking history">Booking history</a></li>
+                     <li><a href="about-us.html" title="About us">About us</a></li>
+                     <!-- <li><a href="#" title="letter-spacing">letter-spacing</a></li>
+                  <li><a href="#" title="line-height">line-height</a></li> -->
+                  </ul>
+                  <!-- <ul>
+                  <li><a href="contact.html" title="Contact">Contact</a></li>
+                  <li><a href="booking_history.html" tite="Booking history">Booking history</a></li>
+                  <li><a href="about-us.html" title="About us">About us</a></li>
+               </ul> -->
+               </div>
+            </div>
+            <div class="col-md-12">
+               <div class="social-icon">
+                  <div class="social-icon-background">
+                     <div class="facebook">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                     </div>
+                  </div>
+                  <div class="social-icon-background">
+                     <div class="twitter">
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                     </div>
+                  </div>
+                  <div class="social-icon-background">
+                     <div class="instagram">
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                     </div>
+                  </div>
+                  <div class="social-icon-background">
+                     <div class="google-plus">
+                        <a href="#"><i class="fa-brands fa-google-plus-g"></i></a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-md-12">
+               <div class="copyright">
+                  <p>&#169; Hyvikk Solutions 2019.All Rights Reserved.</p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </footer>
+
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"></script>
+   <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+   <script>
+      $(document).ready(function () {
+         $("input").focusout(function () {
+
+            if ($(this).val() != "") {
+               $(this).addClass("has-content");
+            } else {
+               $(this).removeClass("has-content");
+            }
+         });
+         $("textarea").focusout(function () {
+
+            if ($(this).val() != "") {
+               $(this).addClass("has-content");
+            } else {
+               $(this).removeClass("has-content");
+            }
+         });
+
+      });
+
+   </script>
+   <script>
+      $(document).ready(function () {
+         $(".book-now").click(function () {
+            $(".date-time").css("display", "none", " transition", "all .3s ease");
+         });
+         $(".book-later").click(function () {
+            $(".date-time").css("display", "block");
+         });
+         var readURL = function (input) {
+            if (input.files && input.files[0]) {
+               var reader = new FileReader();
+
+               reader.onload = function (e) {
+                  $('.profile-pic').attr('src', e.target.result);
+               }
+
+               reader.readAsDataURL(input.files[0]);
+            }
+         }
+         $(".file-upload").on('change', function () {
+            readURL(this);
+         });
+         $(".upload-button").on('click', function () {
+            $(".file-upload").click();
+         });
+      });
+   </script>
+</body>
+
+</html>
